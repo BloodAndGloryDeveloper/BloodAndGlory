@@ -1,6 +1,8 @@
 package bloodandglory.common.registies;
 
+import bloodandglory.common.item.ItemBAGMaterial;
 import bloodandglory.common.item.ItemMisc;
+import bloodandglory.common.item.tools.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -19,8 +21,9 @@ import java.util.Set;
 
 /**在此注册物品*/
 public class ItemRegistry {
+    //存放物品的哈希表
     public static final Set<Item> ITEMS = new LinkedHashSet<>();
-
+    //材料
     public static final Item MITHRIL = new ItemMisc();
     public static final Item BRONZE = new ItemMisc();
     public static final Item STEELMAKING = new ItemMisc();
@@ -30,6 +33,12 @@ public class ItemRegistry {
     public static final Item NOLDOR_CURRENCY = new ItemMisc();
     public static final Item EMPIRE_CURRENCY = new ItemMisc();
     public static final Item HARD_CURRENCY = new ItemMisc();
+    //Tool
+    public static final Item MITHRIL_AXE = new ItemBAGAxe(ItemBAGMaterial.TOOL_MITHRIL);
+    public static final Item MITHRIL_SWORD = new ItemBAGSword(ItemBAGMaterial.TOOL_MITHRIL);
+    public static final Item MITHRIL_SHOVEL = new ItemBAGShovel(ItemBAGMaterial.TOOL_MITHRIL);
+    public static final Item MITHRIL_PICKAXE = new ItemBAGPickaxe(ItemBAGMaterial.TOOL_MITHRIL);
+    public static final Item MITHRIL_HOE = new ItemBAGHoe(ItemBAGMaterial.TOOL_MITHRIL);
 
 
     public static void preInit(){

@@ -4,12 +4,12 @@ import bloodandglory.common.registies.ItemRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class ItemsTab extends CreativeTabs {
-    public ItemsTab(){
-        super("bloodandglory.item");
+public class ToolsTab extends CreativeTabs {
+    public ToolsTab(){
+        super("bloodandglory.tool");
     }
     @Override
     public ItemStack getTabIconItem(){
-        return new ItemStack(ItemRegistry.MITHRIL);
+        return new ItemStack(ItemRegistry.MITHRIL_SWORD);
     }
 }

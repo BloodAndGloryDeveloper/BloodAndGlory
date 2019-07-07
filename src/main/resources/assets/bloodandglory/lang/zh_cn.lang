@@ -8,6 +8,12 @@ item.bloodandglory.steel.name=钢
 item.bloodandglory.noldor_currency.name=诺多货币
 item.bloodandglory.empire_currency.name=帝国货币
 item.bloodandglory.hard_currency.name=硬通货
+#Tool
+item.bloodandglory.mithril_sword.name=秘银剑
+item.bloodandglory.mithril_shovel.name=秘银铲
+item.bloodandglory.mithril_axe.name=秘银斧
+item.bloodandglory.mithril_pickaxe.name=秘银稿
 
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品
+itemGroup.bloodandglory.tool=血与荣耀—工具

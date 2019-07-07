@@ -8,6 +8,12 @@ item.bloodandglory.steel.name=Steel
 item.bloodandglory.noldor_currency.name=Noldor Currency
 item.bloodandglory.empire_currency.name=Empire Currency
 item.bloodandglory.hard_currency.name=Hard Currency
+#Tool
+item.bloodandglory.mithril_sword.name=Mithril Sword
+item.bloodandglory.mithril_shovel.name=Mithril Shovel
+item.bloodandglory.mithril_axe.name=Mithril Axe
+item.bloodandglory.mithril_pickaxe.name=Mithril Pickaxe
 
 #Creative Tabs
 itemGroup.bloodandglory.item=BloodAndGlory-Item
+itemGroup.bloodandglory.tool=Bloodandglory-Tool

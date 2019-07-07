@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "## ",
+    "#X ",
+    " X "
+  ],
+  "key": {
+    "#": {
+      "item": "bloodandglory:mithril"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "bloodandglory:mithril_axe"
+  }
+}
