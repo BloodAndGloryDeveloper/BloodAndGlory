@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bloodandglory",
+  "name": "Blood And Glory",
+  "description": "两个少年的幻想乡",
+  "version": "0.0.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Black Fish","Yaesey"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

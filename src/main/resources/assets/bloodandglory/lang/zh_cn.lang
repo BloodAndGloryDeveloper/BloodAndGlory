@@ -1,0 +1,13 @@
+#item
+item.bloodandglory.mithril.name=秘银
+item.bloodandglory.bronze.name=青铜
+item.bloodandglory.steelmaking.name=百炼钢
+item.bloodandglory.immortal_cuprum.name=仙铜
+item.bloodandglory.steel.name=钢
+#Currency
+item.bloodandglory.noldor_currency.name=诺多货币
+item.bloodandglory.empire_currency.name=帝国货币
+item.bloodandglory.hard_currency.name=硬通货
+
+#Creative Tabs
+itemGroup.bloodandglory.item=血与荣耀—物品

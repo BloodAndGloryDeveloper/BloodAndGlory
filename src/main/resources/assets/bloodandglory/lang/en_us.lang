@@ -1,0 +1,13 @@
+#item
+item.bloodandglory.mithril.name=Mithril
+item.bloodandglory.bronze.name=Bronze
+item.bloodandglory.steelmaking.name=Steelmaking
+item.bloodandglory.immortal_cuprum.name=Immortal Cuprum
+item.bloodandglory.steel.name=Steel
+#Currency
+item.bloodandglory.noldor_currency.name=Noldor Currency
+item.bloodandglory.empire_currency.name=Empire Currency
+item.bloodandglory.hard_currency.name=Hard Currency
+
+#Creative Tabs
+itemGroup.bloodandglory.item=BloodAndGlory-Item
