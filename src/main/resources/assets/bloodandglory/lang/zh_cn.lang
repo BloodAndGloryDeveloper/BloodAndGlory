@@ -13,7 +13,13 @@ item.bloodandglory.mithril_sword.name=秘银剑
 item.bloodandglory.mithril_shovel.name=秘银铲
 item.bloodandglory.mithril_axe.name=秘银斧
 item.bloodandglory.mithril_pickaxe.name=秘银稿
+item.bloodandglory.mithril_hoe.name=秘银锄
+
+#block
+tile.bloodandglory.mithril_ore.name=秘银矿
+tile.bloodandglory.mithril_block.name=秘银块
 
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品
 itemGroup.bloodandglory.tool=血与荣耀—工具
+itemGroup.bloodandglory.block=血与荣耀—物品

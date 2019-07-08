@@ -8,8 +8,9 @@ public class ItemsTab extends CreativeTabs {
     public ItemsTab(){
         super("bloodandglory.item");
     }
+
     @Override
-    public ItemStack getTabIconItem(){
+    public ItemStack createIcon(){
         return new ItemStack(ItemRegistry.MITHRIL);
     }
 }

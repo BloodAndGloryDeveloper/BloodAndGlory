@@ -1,8 +1,10 @@
 package bloodandglory;
 
 import bloodandglory.common.CommonProxy;
+import bloodandglory.common.registies.BlockRegistry;
 import bloodandglory.common.registies.ItemRegistry;
 import bloodandglory.common.registies.Registry;
+import jdk.nashorn.internal.ir.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -25,6 +27,7 @@ public class BloodAndGlory {
 
         proxy.preInit(event);
         MinecraftForge.EVENT_BUS.register(ItemRegistry.class);
+        MinecraftForge.EVENT_BUS.register(BlockRegistry.class);
     }
 
     @EventHandler

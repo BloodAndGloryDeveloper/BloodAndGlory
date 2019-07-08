@@ -1,15 +1,18 @@
 package bloodandglory.common.registies;
 
+import bloodandglory.ModInfo;
 import bloodandglory.common.item.ItemBAGMaterial;
 import bloodandglory.common.item.ItemMisc;
 import bloodandglory.common.item.tools.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -41,12 +44,16 @@ public class ItemRegistry {
     public static final Item MITHRIL_HOE = new ItemBAGHoe(ItemBAGMaterial.TOOL_MITHRIL);
 
 
+    public static void addSmelting(){
+        GameRegistry.addSmelting(BlockRegistry.MITHRIL_ORE,new ItemStack(MITHRIL),1.0F);
+    }
+
     public static void preInit(){
         try {
             for (Field field:ItemRegistry.class.getDeclaredFields()){
                 if (field.get(null) instanceof Item){
                     Item item = (Item) field.get(null);
-                    registrItems(item,field.getName());
+                    registryItems(item,field.getName());
                 }
             }
         }catch (Exception ex){
@@ -54,19 +61,21 @@ public class ItemRegistry {
         }
     }
 
-    private static void registrItems(Item item,String fieldName){
+    private static void registryItems(Item item,String fieldName){
         ITEMS.add(item);
         String idName = fieldName.toLowerCase(Locale.ENGLISH);
-        item.setRegistryName(idName).setUnlocalizedName("bloodandglory."+ idName);
+        item.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
 
     }
 
     @SubscribeEvent
     public static void itemRegister(final RegistryEvent.Register<Item> event){
         final IForgeRegistry<Item> registry = event.getRegistry();
+        for (Item item : BlockRegistry.ITEM_BLOCKS){
+            registry.register(item);
+        }
         for (Item item : ITEMS){
             registry.register(item);
-
         }
     }
 
@@ -74,6 +83,7 @@ public class ItemRegistry {
     @SideOnly(Side.CLIENT)
     public static void modelRegisterItems(ModelRegistryEvent event) {
         for (Item item : ITEMS) {
+            //fixme 这个实现太过简陋了
             ModelLoader.setCustomModelResourceLocation(item,0,new ModelResourceLocation(item.getRegistryName(),"inventory"));
         }
     }

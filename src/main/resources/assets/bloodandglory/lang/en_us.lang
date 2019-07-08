@@ -13,7 +13,13 @@ item.bloodandglory.mithril_sword.name=Mithril Sword
 item.bloodandglory.mithril_shovel.name=Mithril Shovel
 item.bloodandglory.mithril_axe.name=Mithril Axe
 item.bloodandglory.mithril_pickaxe.name=Mithril Pickaxe
+item.bloodandglory.mithril_hoe.name=Mithril Hoe
+
+#block
+tile.bloodandglory.mithril_ore.name=Mithril Ore
+tile.bloodandglory.mithril_block.name=Mithril Block
 
 #Creative Tabs
 itemGroup.bloodandglory.item=BloodAndGlory-Item
 itemGroup.bloodandglory.tool=Bloodandglory-Tool
+itemGroup.bloodandglory.block=Bloodandglory-Block

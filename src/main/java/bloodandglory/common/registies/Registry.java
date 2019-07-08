@@ -5,5 +5,6 @@ public class Registry {
 
     public void preInit(){
         ItemRegistry.preInit();
+        BlockRegistry.preInit();
     }
 }
