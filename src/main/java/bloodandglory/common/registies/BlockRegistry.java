@@ -3,13 +3,17 @@ package bloodandglory.common.registies;
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -58,10 +62,34 @@ public class BlockRegistry {
     }
 
     @SubscribeEvent
+    public static void onHarvesting(BlockEvent.HarvestDropsEvent event){
+        //如果破坏方块的实体不为空(即玩家或其他实体破坏，而不是爆炸)
+        //getRNG设定掉落概率，我们设为1/10即可
+        if (event.getHarvester() != null && event.getHarvester().getRNG().nextInt(10) == 0){
+            //从丛林树叶掉落香蕉
+            //判断是否是丛林树叶
+            if (event.getState().getBlock() == Blocks.LEAVES && event.getState().getProperties().containsValue(BlockPlanks.EnumType.JUNGLE)){
+                event.getDrops().add(new ItemStack(ItemRegistry.BANANA,2));
+            }
+            //从草丛掉落小米
+            //判断是否是草丛
+            if (event.getState().getBlock() == Blocks.TALLGRASS){
+                event.getDrops().add(new ItemStack(ItemRegistry.MILLET,1));
+            }
+        }
+    }
+
+    @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void modelRegistryBlock(ModelRegistryEvent event){
-        for (Block block : BLOCKS){
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block),0,new ModelResourceLocation(block.getRegistryName(),"inventory"));
+        try {
+            for (Block block : BLOCKS){
+                ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block),0,new ModelResourceLocation(block.getRegistryName(),"inventory"));
+            }
+        }catch (NullPointerException ex){
+            System.out.println("Sorry!It seems we haven't registry this block or something wrong happen.\n" +
+                    "You can issues this problem to us on Github,sorry again");
         }
+
     }
 }

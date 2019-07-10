@@ -8,12 +8,24 @@ item.bloodandglory.steel.name=钢
 item.bloodandglory.noldor_currency.name=诺多货币
 item.bloodandglory.empire_currency.name=帝国货币
 item.bloodandglory.hard_currency.name=硬通货
+item.bloodandglory.bright_feather.name=光辉羽
+item.bloodandglory.swan_quill.name=天鹅翎
+item.bloodandglory.heart_of_storm.name=风暴之心
+item.bloodandglory.stone_of_falcon.name=猎鹰石
+item.bloodandglory.millet.name=小米
+item.bloodandglory.cotton.name=棉花
 #Tool
 item.bloodandglory.mithril_sword.name=秘银剑
 item.bloodandglory.mithril_shovel.name=秘银铲
 item.bloodandglory.mithril_axe.name=秘银斧
 item.bloodandglory.mithril_pickaxe.name=秘银稿
 item.bloodandglory.mithril_hoe.name=秘银锄
+#Food
+item.bloodandglory.alcohol.name=酒
+item.bloodandglory.banana.name=香蕉
+item.bloodandglory.cooked_edd.name=熟鸡蛋
+item.bloodandglory.raw_rise.name=生米饭
+item.bloodandglory.rise.name=米饭
 
 #block
 tile.bloodandglory.mithril_ore.name=秘银矿

@@ -3,10 +3,16 @@ package bloodandglory.common.registies;
 import bloodandglory.ModInfo;
 import bloodandglory.common.item.ItemBAGMaterial;
 import bloodandglory.common.item.ItemMisc;
+import bloodandglory.common.item.food.ItemAlcohol;
+import bloodandglory.common.item.food.ItemBAGFood;
+import bloodandglory.common.item.food.ItemRise;
 import bloodandglory.common.item.tools.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -30,8 +36,15 @@ public class ItemRegistry {
     public static final Item MITHRIL = new ItemMisc();
     public static final Item BRONZE = new ItemMisc();
     public static final Item STEELMAKING = new ItemMisc();
-    public static final Item IMMORTAL_CUPRUM = new ItemMisc();//仙铜
+    public static final Item IMMORTAL_CUPRUM = new ItemMisc();  //仙铜
     public static final Item STEEL = new ItemMisc();
+    public static final Item BRIGHT_FEATHER = new ItemMisc();
+    public static final Item SWAN_QUILL = new ItemMisc();
+    public static final Item HEART_OF_STORM = new ItemMisc();
+    public static final Item STONE_OF_FALCON = new ItemMisc();
+
+    public static final Item MILLET  =new ItemMisc();
+    public static final Item COTTON = new ItemMisc();
     //货币Currency
     public static final Item NOLDOR_CURRENCY = new ItemMisc();
     public static final Item EMPIRE_CURRENCY = new ItemMisc();
@@ -42,10 +55,19 @@ public class ItemRegistry {
     public static final Item MITHRIL_SHOVEL = new ItemBAGShovel(ItemBAGMaterial.TOOL_MITHRIL);
     public static final Item MITHRIL_PICKAXE = new ItemBAGPickaxe(ItemBAGMaterial.TOOL_MITHRIL);
     public static final Item MITHRIL_HOE = new ItemBAGHoe(ItemBAGMaterial.TOOL_MITHRIL);
+    //Food
+    public static final Item ALCOHOL = new ItemAlcohol();
+    public static final Item COOKED_EGG = new ItemBAGFood(4,2.0F,true);
+    public static final Item RAW_RICE = new ItemRise(2,0.2F,false).setPotionEffect(new PotionEffect(MobEffects.HUNGER,500,0),0.4F);
+    public static final Item RICE = new ItemRise(7,0.5F,false);
+    public static final Item BANANA = new ItemBAGFood(3,0.7F,false);
 
 
+    //添加烤制
     public static void addSmelting(){
         GameRegistry.addSmelting(BlockRegistry.MITHRIL_ORE,new ItemStack(MITHRIL),1.0F);
+        GameRegistry.addSmelting(Items.EGG,new ItemStack(COOKED_EGG),0.5F);
+        GameRegistry.addSmelting(RAW_RICE,new ItemStack(RICE),0.5F);
     }
 
     public static void preInit(){

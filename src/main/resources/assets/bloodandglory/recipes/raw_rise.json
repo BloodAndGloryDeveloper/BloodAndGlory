@@ -1,0 +1,12 @@
+{
+  "type":"minecraft:crafting_shapeless",
+  "ingredients":[
+    {
+      "item":"bloodandglory:millet"
+    },
+    {
+      "item":"minecraft:bow"
+    }
+  ],
+  "result":"bloodandglory:raw_rice"
+}
