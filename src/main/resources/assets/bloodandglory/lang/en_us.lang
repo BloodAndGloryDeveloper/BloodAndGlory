@@ -4,6 +4,12 @@ item.bloodandglory.bronze.name=Bronze
 item.bloodandglory.steelmaking.name=Steelmaking
 item.bloodandglory.immortal_cuprum.name=Immortal Cuprum
 item.bloodandglory.steel.name=Steel
+item.bloodandglory.bright_feather.name=Bright Feather
+item.bloodandglory.swan_quill.name=Swan Quill
+item.bloodandglory.heart_of_storm.name=Heart Of Storm
+item.bloodandglory.stone_of_falcon.name=Stone Of Falcon
+item.bloodandglory.millet.name=Millet
+item.bloodandglory.cotton.name=Cotton
 #Currency
 item.bloodandglory.noldor_currency.name=Noldor Currency
 item.bloodandglory.empire_currency.name=Empire Currency
@@ -14,6 +20,12 @@ item.bloodandglory.mithril_shovel.name=Mithril Shovel
 item.bloodandglory.mithril_axe.name=Mithril Axe
 item.bloodandglory.mithril_pickaxe.name=Mithril Pickaxe
 item.bloodandglory.mithril_hoe.name=Mithril Hoe
+#Food
+item.bloodandglory.alcohol.name=Alcohol
+item.bloodandglory.banana.name=Banana
+item.bloodandglory.raw_rise.name=Raw Rise
+item.bloodandglory.rise.name=Rise
+item.bloodandglory.cooked_edd.name=Cooked Egg
 
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore
