@@ -5,8 +5,10 @@
       "item":"bloodandglory:millet"
     },
     {
-      "item":"minecraft:bow"
+      "item":"minecraft:bowl"
     }
   ],
-  "result":"bloodandglory:raw_rice"
+  "result":{
+    "item":"bloodandglory:raw_rice"
+  }
 }

@@ -23,9 +23,9 @@ item.bloodandglory.mithril_hoe.name=Mithril Hoe
 #Food
 item.bloodandglory.alcohol.name=Alcohol
 item.bloodandglory.banana.name=Banana
-item.bloodandglory.raw_rise.name=Raw Rise
-item.bloodandglory.rise.name=Rise
-item.bloodandglory.cooked_edd.name=Cooked Egg
+item.bloodandglory.raw_rice.name=Raw Rice
+item.bloodandglory.rice.name=Rice
+item.bloodandglory.cooked_egg.name=Cooked Egg
 
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore

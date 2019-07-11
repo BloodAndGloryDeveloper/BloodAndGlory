@@ -15,7 +15,7 @@ public class ItemAlcohol extends ItemBAGFood{
 
     @Override
     protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player){
-        player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA,20,1));
-        player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH,300,2));
+        player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA,1000,1));
+        player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH,3000,2));
     }
 }
