@@ -3,7 +3,7 @@
   "modid": "bloodandglory",
   "name": "Blood And Glory",
   "description": "两个少年的幻想乡",
-  "version": "0.0.0",
+  "version": "0.0.1-dev",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
