@@ -1,26 +1,24 @@
 {
   "display": {
     "icon": {
-        "item":"bloodandglory:mithril"
+      "item":"bloodandglory:mithril"
     },
-    "title": "BloodAndGlory Root Advancement",
-    "frame": "goal",
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
-    "description": "Hey! This is my first advancement",
-    "show_toast": false,
-    "announce_to_chat": false,
-    "hidden": false
+    "title": {
+      "translate":"advancement.bloodandglory.root.title"
+    },
+    "description": {
+      "translate":"advancement.bloodandglory.root.desc"
+    },
+    "background":"minecraft:textures/gui/advancements/backgrounds/nether.png"
   },
   "criteria": {
-    "crafting_table": {
-      "trigger": "minecraft:inventory_changed",
+    "do_something": {
+      "trigger": "minecraft:location",
       "conditions": {
-        "items": [
-          {
-            "item": "minecraft:crafting_table"
-          }
-        ]
+        "dimension":"overworld"
       }
     }
-  }
+  },
+  "requirements": [["do_something"
+  ]]
 }

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item":"bloodandglory:bronze"
+    },
+    "title": {
+      "translate":"advancement.bloodandglory.miner.root.title"
+    },
+    "description": {
+      "translate":"advancement.bloodandglory.miner.root.desc"
+    },
+    "background":"bloodandglory:textures/blocks/mithril_ore.png"
+  },
+  "criteria": {
+    "do_something": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item":"bloodandglory:mithril_ore"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["do_something"
+  ]]
+}

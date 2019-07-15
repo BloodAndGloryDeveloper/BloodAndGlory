@@ -48,9 +48,15 @@ tooltip.bloodandglory.hoe=Use hoe.
 tooltip.bloodandglory.pickaxe=Use pickaxe.
 
 #Advancements
+advancement.bloodandglory.root.title=Blood And Glory
+advancement.bloodandglory.root.desc=Nothing to show
 #adventurer
-advancement.bloodandglory.i_am_rich.title=I have been rich
-advancement.bloodandglory.i_am_rich.description=Got any Currency
+advancement.bloodandglory.adventurer.root.title=Totally inhuman!
+advancement.bloodandglory.adventurer.root.desc=You kill every thing even a poor pig?
+advancement.bloodandglory.adventurer.i_am_rich.title=I have been rich
+advancement.bloodandglory.adventurer.i_am_rich.desc=Got any Currency
 #miner
+advancement.bloodandglory.miner.root.title=Proletariat
+advancement.bloodandglory.miner.root.desc=Got ore of mithrils
 advancement.bloodandglory.miner.get_mithril.title=Migic age
-advancement.bloodandglory.miner.get_mithril.description=Got a mithril
+advancement.bloodandglory.miner.get_mithril.desc=Got a mithril
