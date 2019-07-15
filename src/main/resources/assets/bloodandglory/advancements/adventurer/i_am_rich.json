@@ -1,17 +1,17 @@
 {
   "display":{
     "icon":{
-      "item":"bloodandglory:items/mithril"
+      "item":"bloodandglory:mithril"
     },
     "title":{
-      "translate":"advancement.bloodandglory.miner.i_am_rich.title"
+      "translate":"advancement.bloodandglory.adventurer.i_am_rich.title"
     },
     "frame":"task",
     "description":{
-      "translate":"advancement.bloodandglory.i_am_rich.description"
+      "translate":"advancement.bloodandglory.adventurer.i_am_rich.desc"
     }
   },
-  "parent":"bloodandglory:miner/get_mithril",
+  "parent":"bloodandglory:adventurer/root",
   "criteria": {
     "iron": {
       "trigger": "minecraft:inventory_changed",

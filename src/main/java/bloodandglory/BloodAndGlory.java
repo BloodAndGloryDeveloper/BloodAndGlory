@@ -5,6 +5,8 @@ import bloodandglory.common.registies.BlockRegistry;
 import bloodandglory.common.registies.ItemRegistry;
 import bloodandglory.common.registies.Registry;
 import jdk.nashorn.internal.ir.Block;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.advancements.critereon.ItemPredicates;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,6 +30,10 @@ public class BloodAndGlory {
         proxy.preInit(event);
         MinecraftForge.EVENT_BUS.register(ItemRegistry.class);
         MinecraftForge.EVENT_BUS.register(BlockRegistry.class);
+    }
+
+    public static ResourceLocation setPathIn(String pathIn){
+        return new ResourceLocation(ModInfo.MOD_ID,pathIn);
     }
 
     @EventHandler

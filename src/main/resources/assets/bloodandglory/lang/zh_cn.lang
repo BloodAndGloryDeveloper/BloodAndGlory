@@ -48,10 +48,15 @@ tooltip.bloodandglory.hoe=勤劳才有收获
 tooltip.bloodandglory.pickaxe=开山凿石
 
 #Advancements
+advancement.bloodandglory.root.title=血与荣耀
+advancement.bloodandglory.root.desc=没什么
 #adventurer
-advancement.bloodandglory.i_am_rich.title=爷有钱了
-advancement.bloodandglory.i_am_rich.description=获得任意货币
-
+advancement.bloodandglory.adventurer.root.title=毫无人性
+advancement.bloodandglory.adventurer.root.desc=连一头可怜的猪你也要杀？
+advancement.bloodandglory.adventurer.i_am_rich.title=爷有钱了
+advancement.bloodandglory.adventurer.i_am_rich.desc=获得任意货币
 #miner
+advancement.bloodandglory.miner.root.title=无产阶级
+advancement.bloodandglory.miner.root.desc=获得秘银快
 advancement.bloodandglory.miner.get_mithril.title=魔法时代
-advancement.bloodandglory.miner.get_mithril.description=获得一颗秘银
+advancement.bloodandglory.miner.get_mithril.desc=获得一颗秘银
