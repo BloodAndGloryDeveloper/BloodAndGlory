@@ -1,0 +1,27 @@
+{
+  "display":{
+    "icon":{
+      "item":"bloodandglory:items/mithril"
+    },
+    "title":{
+      "translate":"advancement.bloodandglory.miner.get_mithril.title"
+    },
+    "frame":"task",
+    "description":{
+      "translate":"advancement.bloodandglory.miner.get_mithril.description"
+    }
+  },
+  "parent":"bloodandglory",
+  "criteria": {
+    "iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bloodandglory:mithril"
+          }
+        ]
+      }
+    }
+  }
+}

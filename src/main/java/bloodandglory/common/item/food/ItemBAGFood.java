@@ -1,7 +1,16 @@
 package bloodandglory.common.item.food;
 
 import bloodandglory.client.tab.BAGCreativeTabs;
+import com.sun.istack.internal.NotNull;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class ItemBAGFood extends ItemFood {
     /**
@@ -11,5 +20,11 @@ public class ItemBAGFood extends ItemFood {
     public ItemBAGFood(int hungerHeal,float saturation,boolean isWolfFood){
         super(hungerHeal,saturation,isWolfFood);
         this.setCreativeTab(BAGCreativeTabs.ITEM_TAB);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void addInformation(ItemStack stack, @NotNull World worldIn, List<String> tooltip, ITooltipFlag flagIn){
+        tooltip.add(I18n.format("tooltip.bloodandglory.food"));
     }
 }

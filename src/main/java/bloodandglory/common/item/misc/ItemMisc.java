@@ -1,4 +1,4 @@
-package bloodandglory.common.item;
+package bloodandglory.common.item.misc;
 
 import bloodandglory.client.tab.BAGCreativeTabs;
 import net.minecraft.item.Item;

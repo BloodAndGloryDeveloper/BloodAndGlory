@@ -1,0 +1,36 @@
+{
+  "display":{
+    "icon":{
+      "item":"bloodandglory:items/mithril"
+    },
+    "title":{
+      "translate":"advancement.bloodandglory.miner.i_am_rich.title"
+    },
+    "frame":"task",
+    "description":{
+      "translate":"advancement.bloodandglory.i_am_rich.description"
+    }
+  },
+  "parent":"bloodandglory:miner/get_mithril",
+  "criteria": {
+    "iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "bloodandglory:noldor_currency",
+            "min":1
+          },
+          {
+            "item": "bloodandglory:empire_currency",
+            "min":1
+          },
+          {
+            "item": "bloodandglory:hard_currency",
+            "min":1
+          }
+        ]
+      }
+    }
+  }
+}
