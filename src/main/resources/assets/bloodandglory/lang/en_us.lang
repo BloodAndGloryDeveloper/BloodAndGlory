@@ -35,3 +35,22 @@ tile.bloodandglory.mithril_block.name=Mithril Block
 itemGroup.bloodandglory.item=BloodAndGlory-Item
 itemGroup.bloodandglory.tool=Bloodandglory-Tool
 itemGroup.bloodandglory.block=Bloodandglory-Block
+
+#ToolTip
+tooltip.bloodandglory.alcohol=Drink it,you will be strong as a bull!
+tooltip.bloodandglory.food=For God's sake,full up and sleep well.
+tooltip.bloodandglory.mithril_tool=Look,my hand is holding the magic!
+
+tooltip.bloodandglory.sword=At the sight of injustcie,waving to the enemy.
+tooltip.bloodandglory.axe=More shorp,more save time.
+tooltip.bloodandglory.shovel=Use shovel.
+tooltip.bloodandglory.hoe=Use hoe.
+tooltip.bloodandglory.pickaxe=Use pickaxe.
+
+#Advancements
+#adventurer
+advancement.bloodandglory.i_am_rich.title=I have been rich
+advancement.bloodandglory.i_am_rich.description=Got any Currency
+#miner
+advancement.bloodandglory.miner.get_mithril.title=Migic age
+advancement.bloodandglory.miner.get_mithril.description=Got a mithril

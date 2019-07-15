@@ -2,22 +2,26 @@ package bloodandglory.common.registies;
 
 import bloodandglory.ModInfo;
 import bloodandglory.common.item.ItemBAGMaterial;
-import bloodandglory.common.item.ItemMisc;
-import bloodandglory.common.item.food.ItemAlcohol;
+import bloodandglory.common.item.misc.ItemMisc;
+import bloodandglory.common.item.misc.ItemAlcohol;
 import bloodandglory.common.item.food.ItemBAGFood;
 import bloodandglory.common.item.food.ItemRise;
 import bloodandglory.common.item.tools.*;
+import com.sun.istack.internal.NotNull;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -25,6 +29,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.lang.reflect.Field;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -61,6 +66,7 @@ public class ItemRegistry {
     public static final Item RAW_RICE = new ItemRise(2,0.2F,false).setPotionEffect(new PotionEffect(MobEffects.HUNGER,500,0),0.4F);
     public static final Item RICE = new ItemRise(7,0.5F,false);
     public static final Item BANANA = new ItemBAGFood(3,0.7F,false);
+
 
 
     //添加烤制
