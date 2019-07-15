@@ -7,17 +7,12 @@ import bloodandglory.common.item.misc.ItemAlcohol;
 import bloodandglory.common.item.food.ItemBAGFood;
 import bloodandglory.common.item.food.ItemRise;
 import bloodandglory.common.item.tools.*;
-import com.sun.istack.internal.NotNull;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -29,7 +24,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.lang.reflect.Field;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
