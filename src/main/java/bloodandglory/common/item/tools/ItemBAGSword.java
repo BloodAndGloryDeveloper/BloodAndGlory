@@ -20,7 +20,7 @@ public class ItemBAGSword extends ItemSword {
     @Override
     public void addInformation(ItemStack stack, @NotNull World worldIn, List<String> tooltip, ITooltipFlag flagIn){
         ToolInformation.addToolInformation(tooltip, this);
-        if (this.getToolMaterialName() == ItemBAGMaterial.TOOL_MITHRIL.name()){
+        if (this.getToolMaterialName().equals(ItemBAGMaterial.TOOL_MITHRIL.name())){
             tooltip.add(I18n.format("tooltip.bloodandglory.mithril_tool"));
         }
     }

@@ -1,7 +1,7 @@
 {
   "display":{
     "icon":{
-      "item":"bloodandglory:mithril"
+      "item":"minecraft:gold_nugget"
     },
     "title":{
       "translate":"advancement.bloodandglory.adventurer.i_am_rich.title"
@@ -18,16 +18,20 @@
       "conditions": {
         "items": [
           {
-            "item": "bloodandglory:noldor_currency",
-            "min":1
+            "item":"bloodandglory:item_misc",
+            "data":0
           },
           {
-            "item": "bloodandglory:empire_currency",
-            "min":1
+            "item":"bloodandglory:item_misc",
+            "data":1
           },
           {
-            "item": "bloodandglory:hard_currency",
-            "min":1
+            "item":"bloodandglory:item_misc",
+            "data":2
+          },
+          {
+            "item":"bloodandglory:item_misc",
+            "data":3
           }
         ]
       }

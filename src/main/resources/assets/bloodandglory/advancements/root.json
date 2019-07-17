@@ -1,7 +1,8 @@
 {
   "display": {
     "icon": {
-      "item":"bloodandglory:mithril"
+      "item":"bloodandglory:item_misc",
+      "data":4
     },
     "title": {
       "translate":"advancement.bloodandglory.root.title"

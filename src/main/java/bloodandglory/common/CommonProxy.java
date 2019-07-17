@@ -1,6 +1,5 @@
 package bloodandglory.common;
 
-import bloodandglory.common.registies.ItemRegistry;
 import bloodandglory.common.world.gen.OreGenEventHandler;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
