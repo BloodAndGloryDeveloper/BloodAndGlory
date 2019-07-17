@@ -1,6 +1,6 @@
 package bloodandglory.client.tab;
 
-import bloodandglory.common.registies.ItemRegistry;
+import bloodandglory.common.item.misc.ItemMisc;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -11,6 +11,6 @@ public class ItemsTab extends CreativeTabs {
 
     @Override
     public ItemStack createIcon(){
-        return new ItemStack(ItemRegistry.MITHRIL);
+        return ItemMisc.EnumItemMisc.MITHRIL.create(1);
     }
 }

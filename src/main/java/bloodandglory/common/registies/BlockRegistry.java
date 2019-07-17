@@ -2,6 +2,7 @@ package bloodandglory.common.registies;
 
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
+import bloodandglory.common.item.misc.ItemMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
@@ -74,7 +75,7 @@ public class BlockRegistry {
             //从草丛掉落小米
             //判断是否是草丛
             if (event.getState().getBlock() == Blocks.TALLGRASS){
-                event.getDrops().add(new ItemStack(ItemRegistry.MILLET,1));
+                event.getDrops().add(ItemMisc.EnumItemMisc.MILLET.create(1));
             }
         }
     }
