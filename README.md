@@ -30,7 +30,7 @@ Blood And Glory是一个Minecraft1.12.2的Mod，里面实现了类似于中土�
    
 其余的PR不合并，如果你对玩法有什么建议的话，欢迎在issues提出 
 
-###作者：  
+### 作者：  
 - 技术实现:Yaesey
 - 材质制作：Black Fish
 - 文化顾问：Black Fish
