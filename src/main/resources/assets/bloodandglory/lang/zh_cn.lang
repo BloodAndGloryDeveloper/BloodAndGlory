@@ -31,6 +31,7 @@ item.bloodandglory.rice.name=米饭
 #block
 tile.bloodandglory.mithril_ore.name=秘银矿
 tile.bloodandglory.mithril_block.name=秘银块
+tile.bloodandglory.induatrial_boiler.name=工业化锅炉
 
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品

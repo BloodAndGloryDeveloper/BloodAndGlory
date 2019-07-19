@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "ACA",
+    "DED"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:trapdoor"
+    },
+    "C": {
+      "item": "minecraft:furnace"
+    },
+    "D": {
+      "item": "minecraft:stone_brick_slab"
+    },
+    "E": {
+      "item": "minecraft:hopper"
+    }
+  },
+  "result": {
+    "item": "bloodandglory:industrial_boiler"
+  }
+}

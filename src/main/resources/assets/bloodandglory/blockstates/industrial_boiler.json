@@ -1,0 +1,42 @@
+{
+  "variants":{
+    "burning=false,facing=north":{
+      "model:":"bloodandglory:industrial_boiler",
+      "uvlock":true
+    },"burning=false,facing=east":{
+      "model:":"bloodandglory:industrial_boiler",
+      "y":90,
+      "uvlock":true
+    },
+    "burning=false,facing=south":{
+      "model:":"bloodandglory:industrial_boiler",
+      "y":180,
+      "uvlock":true
+    },
+    "burning=false,facing=west":{
+      "model:":"bloodandglory:industrial_boiler",
+      "y":270,
+      "uvlock":true
+    },
+    "burning=true,facing=north":{
+      "model:":"bloodandglory:industrial_boiler_burning",
+      "uvlock":true
+    },
+    "burning=true,facing=east":{
+      "model:":"bloodandglory:industrial_boiler_burning",
+      "y":90,
+      "uvlock":true
+    },
+    "burning=true,facing=south":{
+      "model:":"bloodandglory:industrial_boiler_burning",
+      "y":180,
+      "uvlock":true
+    },
+    "burning=true,facing=west":{
+      "model:":"bloodandglory:industrial_boiler_burning",
+      "y":270,
+      "uvlock":true
+    }
+
+  }
+}
