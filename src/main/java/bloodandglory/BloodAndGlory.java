@@ -42,5 +42,7 @@ public class BloodAndGlory {
     @EventHandler
     public void init(FMLInitializationEvent event){
         proxy.init(event);
+
+        Registry.instance.init();
     }
 }

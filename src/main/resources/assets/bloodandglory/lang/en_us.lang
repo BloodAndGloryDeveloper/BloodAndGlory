@@ -31,7 +31,7 @@ item.bloodandglory.cooked_egg.name=Cooked Egg
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore
 tile.bloodandglory.mithril_block.name=Mithril Block
-tile.bloodandglory.induatrial_boiler.name=Induatrial Boiler
+tile.bloodandglory.indutrial_boiler.name=Induatrial Boiler
 
 #Creative Tabs
 itemGroup.bloodandglory.item=BloodAndGlory-Item
@@ -48,6 +48,9 @@ tooltip.bloodandglory.axe=More shorp,more save time.
 tooltip.bloodandglory.shovel=Use shovel.
 tooltip.bloodandglory.hoe=Use hoe.
 tooltip.bloodandglory.pickaxe=Use pickaxe.
+
+#Comtainer
+container.industrial_boiler=Industrial Boiler
 
 #Advancements
 advancement.bloodandglory.root.title=Blood And Glory

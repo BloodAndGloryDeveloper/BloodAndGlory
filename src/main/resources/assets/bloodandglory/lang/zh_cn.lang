@@ -31,7 +31,7 @@ item.bloodandglory.rice.name=米饭
 #block
 tile.bloodandglory.mithril_ore.name=秘银矿
 tile.bloodandglory.mithril_block.name=秘银块
-tile.bloodandglory.induatrial_boiler.name=工业化锅炉
+tile.bloodandglory.indutrial_boiler.name=工业化锅炉
 
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品
@@ -48,6 +48,9 @@ tooltip.bloodandglory.axe=越锋利，越省时
 tooltip.bloodandglory.shovel=铲除邪恶
 tooltip.bloodandglory.hoe=勤劳才有收获
 tooltip.bloodandglory.pickaxe=开山凿石
+
+#Container
+container.industrial_boiler=工业化锅炉
 
 #Advancements
 advancement.bloodandglory.root.title=血与荣耀
