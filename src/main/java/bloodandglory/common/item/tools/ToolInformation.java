@@ -13,9 +13,9 @@ public class ToolInformation {
 
     public static void addToolInformation(List<String> tootip,Object itemTool){
         if (itemTool instanceof ItemAxe){
-            tootip.add(I18n.format(KEY_START + "axe" + "\r\n"));
+            tootip.add(I18n.format(KEY_START + "axe"));
         }else if (itemTool instanceof ItemPickaxe){
-            tootip.add(I18n.format(KEY_START + "pickaxe" + "\r\n"));
+            tootip.add(I18n.format(KEY_START + "pickaxe"));
         }else if (itemTool instanceof ItemSpade){
             tootip.add(I18n.format(KEY_START + "shovel"));
         }else if (itemTool instanceof ItemHoe){

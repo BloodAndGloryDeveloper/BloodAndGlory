@@ -14,6 +14,7 @@ item.bloodandglory.cotton.name=棉花
 item.bloodandglory.noldor_currency.name=诺多货币
 item.bloodandglory.empire_currency.name=帝国货币
 item.bloodandglory.hard_currency.name=硬通货
+item.bloodandglory.jiaozi.name=交子
 #Tool
 item.bloodandglory.mithril_sword.name=秘银剑
 item.bloodandglory.mithril_shovel.name=秘银铲
@@ -30,6 +31,7 @@ item.bloodandglory.rice.name=米饭
 #block
 tile.bloodandglory.mithril_ore.name=秘银矿
 tile.bloodandglory.mithril_block.name=秘银块
+tile.bloodandglory.indutrial_boiler.name=工业化锅炉
 
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品
@@ -46,6 +48,9 @@ tooltip.bloodandglory.axe=越锋利，越省时
 tooltip.bloodandglory.shovel=铲除邪恶
 tooltip.bloodandglory.hoe=勤劳才有收获
 tooltip.bloodandglory.pickaxe=开山凿石
+
+#Container
+container.industrial_boiler=工业化锅炉
 
 #Advancements
 advancement.bloodandglory.root.title=血与荣耀

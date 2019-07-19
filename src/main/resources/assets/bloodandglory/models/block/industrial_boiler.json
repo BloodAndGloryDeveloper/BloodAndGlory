@@ -1,0 +1,8 @@
+{
+  "parent":"block/cube_all",
+  "textures":{
+    "top":"bloodandglory:blocks/industrial_boiler_side",
+    "front":"bloodandglory:blocks/industrial_boiler",
+    "side":"bloodandglory:blocks/industrial_boiler_side"
+  }
+}

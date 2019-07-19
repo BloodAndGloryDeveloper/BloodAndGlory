@@ -5,5 +5,8 @@
       "item":"bloodandglory:mithril_block"
     }
   ],
-  "result":"bloodandglory:mithril"
+  "result":{
+    "item":"bloodandglory:item_misc",
+    "data":4
+  }
 }

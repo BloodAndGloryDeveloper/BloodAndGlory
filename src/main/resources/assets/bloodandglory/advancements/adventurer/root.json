@@ -1,7 +1,8 @@
 {
   "display": {
     "icon": {
-      "item":"bloodandglory:bronze"
+      "item":"bloodandglory:item_misc",
+      "data":4
     },
     "title": {
       "translate":"advancement.bloodandglory.adventurer.root.title"

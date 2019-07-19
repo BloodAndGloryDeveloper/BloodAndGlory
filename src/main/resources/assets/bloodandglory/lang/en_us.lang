@@ -14,6 +14,7 @@ item.bloodandglory.cotton.name=Cotton
 item.bloodandglory.noldor_currency.name=Noldor Currency
 item.bloodandglory.empire_currency.name=Empire Currency
 item.bloodandglory.hard_currency.name=Hard Currency
+item.bloodandglory.jiaozi.name=Jiao Zi
 #Tool
 item.bloodandglory.mithril_sword.name=Mithril Sword
 item.bloodandglory.mithril_shovel.name=Mithril Shovel
@@ -30,6 +31,7 @@ item.bloodandglory.cooked_egg.name=Cooked Egg
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore
 tile.bloodandglory.mithril_block.name=Mithril Block
+tile.bloodandglory.indutrial_boiler.name=Induatrial Boiler
 
 #Creative Tabs
 itemGroup.bloodandglory.item=BloodAndGlory-Item
@@ -46,6 +48,9 @@ tooltip.bloodandglory.axe=More shorp,more save time.
 tooltip.bloodandglory.shovel=Use shovel.
 tooltip.bloodandglory.hoe=Use hoe.
 tooltip.bloodandglory.pickaxe=Use pickaxe.
+
+#Comtainer
+container.industrial_boiler=Industrial Boiler
 
 #Advancements
 advancement.bloodandglory.root.title=Blood And Glory

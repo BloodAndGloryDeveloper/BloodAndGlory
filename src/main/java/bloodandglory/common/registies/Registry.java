@@ -8,4 +8,8 @@ public class Registry {
         BlockRegistry.preInit();
         AdvancementRegistry.preInit();
     }
+
+    public void init(){
+        TileEntityRegistry.init();
+    }
 }

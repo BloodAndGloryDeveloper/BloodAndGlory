@@ -2,11 +2,14 @@ package bloodandglory.common.registies;
 
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
+import bloodandglory.common.block.tile.BlockBAGFurnace;
+import bloodandglory.common.item.misc.ItemMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -19,6 +22,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.*;
 
@@ -28,6 +32,7 @@ public class BlockRegistry {
 
     public static final Block MITHRIL_BLOCK = new BlockBAG(Material.IRON);
     public static final Block MITHRIL_ORE = new BlockBAG(Material.ROCK);
+    public static final Block INDUSTRIAL_BOILER = new BlockBAGFurnace(false);
 
     public static void preInit(){
         try {
@@ -48,9 +53,16 @@ public class BlockRegistry {
         String idName = fieldName.toLowerCase(Locale.ENGLISH);
         block.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
 
-        ItemBlock item = new ItemBlock(block);
-        ITEM_BLOCKS.add(item);
-        item.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
+        ItemBlock item = null;
+        if (block instanceof ICustomItemBlock){
+            item = ((ICustomItemBlock)block).getItemBlock();
+        }else {
+            item = new ItemBlock(block);
+        }
+        if (item != null){
+            ITEM_BLOCKS.add(item);
+            item.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
+        }
     }
 
     @SubscribeEvent
@@ -74,7 +86,7 @@ public class BlockRegistry {
             //从草丛掉落小米
             //判断是否是草丛
             if (event.getState().getBlock() == Blocks.TALLGRASS){
-                event.getDrops().add(new ItemStack(ItemRegistry.MILLET,1));
+                event.getDrops().add(ItemMisc.EnumItemMisc.MILLET.create(1));
             }
         }
     }
@@ -90,6 +102,25 @@ public class BlockRegistry {
             System.out.println("Sorry!It seems we haven't registry this block or something wrong happen.\n" +
                     "You can issues this problem to us on Github,sorry again");
         }
+    }
 
+    public interface ICustomItemBlock{
+        @Nullable
+        default ItemBlock getItemBlock(){
+            return getDefaultItemBlock((Block) this);
+        }
+
+        static ItemBlock getDefaultItemBlock(Block block){
+            if (Item.getItemFromBlock(block) != Items.AIR){
+                return (ItemBlock) Item.getItemFromBlock(block);
+            }else {
+                return new ItemBlock(block);
+            }
+        }
+
+        @SideOnly(Side.CLIENT)
+        default ItemStack getRenderedItem() {
+            return ItemStack.EMPTY;
+        }
     }
 }
