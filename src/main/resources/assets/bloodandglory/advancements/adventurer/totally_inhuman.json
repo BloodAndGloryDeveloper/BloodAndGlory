@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item":"bloodandglory:item_misc",
+      "data":4
+    },
+    "title": {
+      "translate":"advancement.bloodandglory.adventurer.root.title"
+    },
+    "description": {
+      "translate":"advancement.bloodandglory.adventurer.root.desc"
+    },
+    "background":"bloodandglory:textures/blocks/mithril_ore.png"
+  },
+  "criteria": {
+    "do_something": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type":"pig"
+        }
+      }
+    }
+  },
+  "requirements": [["do_something"
+  ]]
+}

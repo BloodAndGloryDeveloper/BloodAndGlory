@@ -33,6 +33,9 @@ tile.bloodandglory.mithril_ore.name=秘银矿
 tile.bloodandglory.mithril_block.name=秘银块
 tile.bloodandglory.indutrial_boiler.name=工业化锅炉
 
+#Entity
+entity.bloodandglory.bandit.name=山贼
+
 #Creative Tabs
 itemGroup.bloodandglory.item=血与荣耀—物品
 itemGroup.bloodandglory.tool=血与荣耀—工具
@@ -54,14 +57,16 @@ container.industrial_boiler=工业化锅炉
 
 #Advancements
 advancement.bloodandglory.root.title=血与荣耀
-advancement.bloodandglory.root.desc=没什么
+advancement.bloodandglory.root.desc=欢迎来到这片大陆
 #adventurer
-advancement.bloodandglory.adventurer.root.title=毫无人性
-advancement.bloodandglory.adventurer.root.desc=连一头可怜的猪你也要杀？
+advancement.bloodandglory.adventurer.root.title=血与荣耀-冒险
+advancement.bloodandglory.adventurer.root.desc=冒险，战斗！
+advancement.bloodandglory.adventurer.totally_inhuman.title=毫无人性
+advancement.bloodandglory.adventurer.totally_inhuman.desc=你连一头可怜的猪都要杀？
 advancement.bloodandglory.adventurer.i_am_rich.title=爷有钱了
 advancement.bloodandglory.adventurer.i_am_rich.desc=获得任意货币
 #miner
-advancement.bloodandglory.miner.root.title=无产阶级
-advancement.bloodandglory.miner.root.desc=获得秘银快
+advancement.bloodandglory.miner.root.title=血与荣耀-矿工
+advancement.bloodandglory.miner.root.desc=你的财富源于此
 advancement.bloodandglory.miner.get_mithril.title=魔法时代
 advancement.bloodandglory.miner.get_mithril.desc=获得一颗秘银

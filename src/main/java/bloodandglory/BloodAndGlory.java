@@ -20,7 +20,7 @@ import scala.collection.parallel.ParIterableLike;
 @Mod(modid = ModInfo.MOD_ID,name = ModInfo.NAME,version = ModInfo.VERSION)
 public class BloodAndGlory {
     @Instance(value = ModInfo.MOD_ID)
-    public BloodAndGlory bloodAndGlory;
+    public static BloodAndGlory bloodAndGlory;
 
     @SidedProxy(clientSide = ModInfo.CLIENTSIDE,serverSide = ModInfo.SERVERSIDE)
     public static CommonProxy proxy;
