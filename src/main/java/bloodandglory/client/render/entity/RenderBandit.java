@@ -1,6 +1,6 @@
 package bloodandglory.client.render.entity;
 
-import bloodandglory.client.model.ModelBandit;
+import bloodandglory.client.render.model.entity.ModelBandit;
 import bloodandglory.common.entity.mobs.EntityBandit;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,7 +15,7 @@ public class RenderBandit extends RenderLiving<EntityBandit> {
     private final ResourceLocation texture = new ResourceLocation("bloodandglory:textures/entities/bandit.png");
 
     public RenderBandit(RenderManager manager){
-        super(manager,new ModelBandit(),0.7F);
+        super(manager,new ModelBandit(),0.5F);
     }
 
     @Nullable
