@@ -2,6 +2,7 @@ package bloodandglory.common.entity.mobs;
 
 import com.google.common.base.Predicate;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
@@ -10,9 +11,11 @@ import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -34,14 +37,6 @@ public class EntityBandit extends EntityTameable implements IMob {
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
-    }
-
-    @Override
-    protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
-        if (this.rand.nextInt(3) == 0){
-            this.dropItem(Items.IRON_AXE,1);
-        }
-        super.dropLoot(wasRecentlyHit,lootingModifier,source);
     }
 
     @Override
@@ -72,12 +67,11 @@ public class EntityBandit extends EntityTameable implements IMob {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30);
-        getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5);
-        getEntityAttribute(SharedMonsterAttributes.ATTACK_SPEED).setBaseValue(2.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
     }
 
-    @Nullable
+
+
     @Override
     public EntityAgeable createChild(EntityAgeable ageable) {
         EntityBandit entityBandit = new EntityBandit(world);
@@ -90,17 +84,48 @@ public class EntityBandit extends EntityTameable implements IMob {
         return entityBandit;
     }
 
-    public void setAngry(boolean angry)
-    {
-        byte b0 = ((Byte)this.dataManager.get(TAMED)).byteValue();
+    //=======生成生物代码=================
 
-        if (angry)
-        {
-            this.dataManager.set(TAMED, Byte.valueOf((byte)(b0 | 2)));
+    @Nullable
+    @Override
+    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+        IEntityLivingData data = super.onInitialSpawn(difficulty,livingdata);
+
+        this.setEquipmentBasedOnDifficulty(difficulty);
+        this.setEnchantmentBasedOnDifficulty(difficulty);
+        this.setDropChance(EntityEquipmentSlot.MAINHAND,0.3F);
+
+        return data;
+    }
+
+    @Override
+    protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty) {
+        int i = rand.nextInt(3);//三种可能
+        switch (i){
+            case 0:
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_AXE));
+                break;
+            case 1:
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_SWORD));
+                break;
+            case 2:
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.BOW));
+                break;
+            default:
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.SHIELD));
         }
-        else
-        {
-            this.dataManager.set(TAMED, Byte.valueOf((byte)(b0 & -3)));
-        }
+
+    }
+
+    //=======生成代码结束==============
+
+    @Override
+    public void writeEntityToNBT(NBTTagCompound compound) {
+        super.writeEntityToNBT(compound);
+    }
+
+    @Override
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
     }
 }
