@@ -62,19 +62,18 @@ public class ModelBandit extends ModelBase
       leftleg.mirror = true;
       setRotation(leftleg, 0F, 0F, 0F);
   }
-  
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5,entity);
-    head.render(f5);
-    body.render(f5);
-    rightarm.render(f5);
-    leftarm.render(f5);
-    rightleg.render(f5);
-    leftleg.render(f5);
+
+  @Override
+  public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+    this.setRotationAngles(limbSwing,limbSwingAmount,ageInTicks,netHeadYaw,headPitch,scale,entityIn);
+    this.head.render(scale);
+    this.body.render(scale);
+    this.rightarm.render(scale);
+    this.leftarm.render(scale);
+    this.rightleg.render(scale);
+    this.leftleg.render(scale);
   }
-  
+
   private void setRotation(ModelRenderer model, float x, float y, float z)
   {
     model.rotateAngleX = x;
@@ -88,13 +87,13 @@ public class ModelBandit extends ModelBase
     this.head.rotateAngleX = headPitch / (180F / (float)Math.PI);//头上下转
     this.head.rotateAngleY = netHeadYaw / (180F / (float)Math.PI);//头左右转
 
-    this.rightarm.rotateAngleZ = this.rightarm.rotateAngleX = 0.0F;
-    this.leftarm.rotateAngleZ = this.leftarm.rotateAngleX = 0.0F;
-    this.rightleg.rotateAngleZ = this.rightleg.rotateAngleX = 0.0F;
-    this.leftleg.rotateAngleZ = this.leftleg.rotateAngleX = 0.0F;
-    this.rightarm.rotateAngleX += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.4F;
-    this.leftarm.rotateAngleX -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.4F;
-    this.rightleg.rotateAngleX -= MathHelper.cos(ageInTicks * 0.09F) * 0.2F + 0.4F;
-    this.rightleg.rotateAngleX += MathHelper.cos(ageInTicks * 0.09F) * 0.2F + 0.4F;
+    this.rightarm.rotateAngleX = 0.0F;
+    this.leftarm.rotateAngleX = 0.0F;
+    this.rightleg.rotateAngleX = 0.0F;
+    this.leftleg.rotateAngleX = 0.0F;
+    this.rightarm.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
+    this.leftarm.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
+    this.rightleg.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
+    this.rightleg.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
   }
 }

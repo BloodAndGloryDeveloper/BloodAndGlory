@@ -1,10 +1,13 @@
 package bloodandglory.common.entity.mobs;
 
+import bloodandglory.ModInfo;
 import com.google.common.base.Predicate;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
+import net.minecraft.entity.ai.attributes.IAttribute;
+import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityTameable;
@@ -15,6 +18,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -22,6 +26,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class EntityBandit extends EntityTameable implements IMob {
+
 
     private EntityAIAttackMelee meleeAI; //发呆
     private EntityAIWander wanderAI;     //走路
@@ -65,9 +70,15 @@ public class EntityBandit extends EntityTameable implements IMob {
     }
 
     @Override
+    protected void entityInit() {
+        super.entityInit();
+    }
+
+    @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
 
 
