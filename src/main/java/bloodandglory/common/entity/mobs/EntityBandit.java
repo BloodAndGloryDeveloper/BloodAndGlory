@@ -1,32 +1,30 @@
 package bloodandglory.common.entity.mobs;
 
-import bloodandglory.ModInfo;
-import com.google.common.base.Predicate;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.SharedMonsterAttributes;
+import bloodandglory.common.entity.EntityBAGTameble;
+import com.google.common.base.Optional;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
-import net.minecraft.entity.ai.attributes.IAttribute;
-import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityTameable;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializer;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateGround;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import scala.util.control.Exception;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class EntityBandit extends EntityTameable implements IMob {
-
+public class EntityBandit extends EntityBAGTameble {
 
     private EntityAIAttackMelee meleeAI; //发呆
     private EntityAIWander wanderAI;     //走路
@@ -57,16 +55,8 @@ public class EntityBandit extends EntityTameable implements IMob {
         this.tasks.addTask(3,this.wanderAI);
         this.tasks.addTask(3,this.watchAI);
         //攻击行为
-        this.targetTasks.addTask(2,new EntityAIOwnerHurtByTarget(this));
-        this.targetTasks.addTask(2,new EntityAIOwnerHurtTarget(this));
         this.targetTasks.addTask(3,new EntityAINearestAttackableTarget<EntityMob>(this, EntityMob.class,true));
-        //打家劫舍(笑)，只有最后才会打劫村民哦(不，你不是正宗劫匪)
-        this.targetTasks.addTask(4,new EntityAITargetNonTamed<EntityVillager>(this, EntityVillager.class, true, new Predicate<EntityVillager>() {
-            @Override
-            public boolean apply(@Nullable EntityVillager input) {
-                return true;
-            }
-        }));
+
     }
 
     @Override
@@ -79,22 +69,8 @@ public class EntityBandit extends EntityTameable implements IMob {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
     }
-
-
-
-    @Override
-    public EntityAgeable createChild(EntityAgeable ageable) {
-        EntityBandit entityBandit = new EntityBandit(world);
-        UUID uuid = this.getOwnerId();
-
-        if (uuid != null){
-            entityBandit.setOwnerId(uuid);
-        }
-
-        return entityBandit;
-    }
-
     //=======生成生物代码=================
 
     @Nullable

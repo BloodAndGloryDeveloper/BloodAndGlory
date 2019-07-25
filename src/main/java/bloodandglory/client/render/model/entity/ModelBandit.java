@@ -91,9 +91,9 @@ public class ModelBandit extends ModelBase
     this.leftarm.rotateAngleX = 0.0F;
     this.rightleg.rotateAngleX = 0.0F;
     this.leftleg.rotateAngleX = 0.0F;
-    this.rightarm.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
+    this.rightarm.rotateAngleX = -MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
     this.leftarm.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
     this.rightleg.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
-    this.rightleg.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
+    this.leftleg.rotateAngleX = -MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
   }
 }
