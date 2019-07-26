@@ -11,14 +11,11 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class EntityBandit extends EntityBAGTameble {
 
@@ -53,7 +50,7 @@ public class EntityBandit extends EntityBAGTameble {
         this.tasks.addTask(3,this.watchAI);
         //攻击行为
 
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityLiving>(this, EntityLiving.class, 10, false, false, new Predicate<EntityLiving>() {
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntityLiving.class, 10, false, false, new Predicate<EntityLiving>() {
             @Override
             public boolean apply(@Nullable EntityLiving input) {
                 return input != null && IMob.VISIBLE_MOB_SELECTOR.apply(input) && !(input instanceof EntityEnderman)&&!(input instanceof EntityBandit);
@@ -71,40 +68,35 @@ public class EntityBandit extends EntityBAGTameble {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.56D);
-        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
     }
     //=======生成生物代码=================
 
     @Nullable
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-        IEntityLivingData data = super.onInitialSpawn(difficulty,livingdata);
-
+        livingdata = super.onInitialSpawn(difficulty,livingdata);
+        this.setCanPickUpLoot(true);//能捡起地上的玩意
         this.setEquipmentBasedOnDifficulty(difficulty);
         this.setEnchantmentBasedOnDifficulty(difficulty);
         this.setDropChance(EntityEquipmentSlot.MAINHAND,0.3F);
 
-        return data;
+        return livingdata;
     }
 
     @Override
     protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty) {
-        int i = rand.nextInt(3);//三种可能
-        switch (i){
-            case 0:
-                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_AXE));
-                break;
-            case 1:
-                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_SWORD));
-                break;
-            case 2:
-                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.BOW));
-                break;
-            default:
-                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.SHIELD));
-        }
+        super.setEquipmentBasedOnDifficulty(difficulty);
 
+        if (this.rand.nextFloat() < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.05F : 0.01F)){
+            int i = rand.nextInt(3);//四种可能
+            if (i == 0){
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_SWORD));
+            }else {
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND,new ItemStack(Items.IRON_AXE));
+            }
+        }
     }
 
     //=======生成代码结束==============
