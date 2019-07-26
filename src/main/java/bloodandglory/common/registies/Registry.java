@@ -7,7 +7,6 @@ public class Registry {
         ItemRegistry.preInit();
         BlockRegistry.preInit();
         AdvancementRegistry.preInit();
-        EntityRegistry.preInit();
     }
 
     public void init(){

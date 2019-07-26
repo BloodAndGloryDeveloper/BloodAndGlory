@@ -6,94 +6,90 @@
 package bloodandglory.client.render.model.entity;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
 public class ModelBandit extends ModelBase
 {
-  //fields
+    //fields
     ModelRenderer head;
     ModelRenderer body;
     ModelRenderer rightarm;
     ModelRenderer leftarm;
     ModelRenderer rightleg;
     ModelRenderer leftleg;
-  
-  public ModelBandit()
-  {
-    textureWidth = 64;
-    textureHeight = 64;
-    
-      head = new ModelRenderer(this, 0, 0);
-      head.addBox(-4F, -8F, -4F, 8, 8, 8);
-      head.setRotationPoint(0F, 0F, 0F);
-      head.setTextureSize(64, 64);
-      head.mirror = true;
-      setRotation(head, 0F, 0F, 0F);
-      body = new ModelRenderer(this, 16, 16);
-      body.addBox(-4F, 0F, -2F, 8, 12, 4);
-      body.setRotationPoint(0F, 0F, 0F);
-      body.setTextureSize(64, 64);
-      body.mirror = true;
-      setRotation(body, 0F, 0F, 0F);
-      rightarm = new ModelRenderer(this, 40, 16);
-      rightarm.addBox(-3F, -2F, -2F, 4, 12, 4);
-      rightarm.setRotationPoint(-5F, 2F, 0F);
-      rightarm.setTextureSize(64, 64);
-      rightarm.mirror = true;
-      setRotation(rightarm, 0F, 0F, 0F);
-      leftarm = new ModelRenderer(this, 40, 16);
-      leftarm.addBox(-1F, -2F, -2F, 4, 12, 4);
-      leftarm.setRotationPoint(5F, 2F, 0F);
-      leftarm.setTextureSize(64, 64);
-      leftarm.mirror = true;
-      setRotation(leftarm, 0F, 0F, 0F);
-      rightleg = new ModelRenderer(this, 0, 16);
-      rightleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-      rightleg.setRotationPoint(-2F, 12F, 0F);
-      rightleg.setTextureSize(64, 64);
-      rightleg.mirror = true;
-      setRotation(rightleg, 0F, 0F, 0F);
-      leftleg = new ModelRenderer(this, 0, 16);
-      leftleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-      leftleg.setRotationPoint(2F, 12F, 0F);
-      leftleg.setTextureSize(64, 64);
-      leftleg.mirror = true;
-      setRotation(leftleg, 0F, 0F, 0F);
-  }
+    public ModelBandit()
+    {
+        textureWidth = 64;
+        textureHeight = 64;
+        head = new ModelRenderer(this, 0, 0);
+        head.addBox(-4F, -8F, -4F, 8, 8, 8);
+        head.setRotationPoint(0F, 0F, 0F);
+        head.setTextureSize(64, 64);
+        head.mirror = true;
+        setRotation(head, 0F, 0F, 0F);
+        body = new ModelRenderer(this, 16, 16);
+        body.addBox(-4F, 0F, -2F, 8, 12, 4);
+        body.setRotationPoint(0F, 0F, 0F);
+        body.setTextureSize(64, 64);
+        body.mirror = true;
+        setRotation(body, 0F, 0F, 0F);
+        rightarm = new ModelRenderer(this, 40, 16);
+        rightarm.addBox(-3F, -2F, -2F, 4, 12, 4);
+        rightarm.setRotationPoint(-5F, 2F, 0F);
+        rightarm.setTextureSize(64, 64);
+        rightarm.mirror = true;
+        setRotation(rightarm, 0F, 0F, 0F);
+        leftarm = new ModelRenderer(this, 40, 16);
+        leftarm.addBox(-1F, -2F, -2F, 4, 12, 4);
+        leftarm.setRotationPoint(5F, 2F, 0F);
+        leftarm.setTextureSize(64, 64);
+        leftarm.mirror = true;
+        setRotation(leftarm, 0F, 0F, 0F);
+        rightleg = new ModelRenderer(this, 0, 16);
+        rightleg.addBox(-2F, 0F, -2F, 4, 12, 4);
+        rightleg.setRotationPoint(-2F, 12F, 0F);
+        rightleg.setTextureSize(64, 64);
+        rightleg.mirror = true;
+        setRotation(rightleg, 0F, 0F, 0F);
+        leftleg = new ModelRenderer(this, 0, 16);
+        leftleg.addBox(-2F, 0F, -2F, 4, 12, 4);
+        leftleg.setRotationPoint(2F, 12F, 0F);
+        leftleg.setTextureSize(64, 64);
+        leftleg.mirror = true;
+        setRotation(leftleg, 0F, 0F, 0F);
+    }
+    @Override
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        this.setRotationAngles(limbSwing,limbSwingAmount,ageInTicks,netHeadYaw,headPitch,scale,entityIn);
+        this.head.render(scale);
+        this.body.render(scale);
+        this.rightarm.render(scale);
+        this.leftarm.render(scale);
+        this.rightleg.render(scale);
+        this.leftleg.render(scale);
+    }
+    private void setRotation(ModelRenderer model, float x, float y, float z)
+    {
+        model.rotateAngleX = x;
+        model.rotateAngleY = y;
+        model.rotateAngleZ = z;
+    }
+    @Override
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
+        this.head.rotateAngleX = headPitch / (180F / (float)Math.PI);//头上下转
+        this.head.rotateAngleY = netHeadYaw / (180F / (float)Math.PI);//头左右转
 
-  @Override
-  public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
-    this.setRotationAngles(limbSwing,limbSwingAmount,ageInTicks,netHeadYaw,headPitch,scale,entityIn);
-    this.head.render(scale);
-    this.body.render(scale);
-    this.rightarm.render(scale);
-    this.leftarm.render(scale);
-    this.rightleg.render(scale);
-    this.leftleg.render(scale);
-  }
-
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-
-  @Override
-  public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
-    super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
-    this.head.rotateAngleX = headPitch / (180F / (float)Math.PI);//头上下转
-    this.head.rotateAngleY = netHeadYaw / (180F / (float)Math.PI);//头左右转
-
-    this.rightarm.rotateAngleX = 0.0F;
-    this.leftarm.rotateAngleX = 0.0F;
-    this.rightleg.rotateAngleX = 0.0F;
-    this.leftleg.rotateAngleX = 0.0F;
-    this.rightarm.rotateAngleX = -MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
-    this.leftarm.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
-    this.rightleg.rotateAngleX = MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
-    this.leftleg.rotateAngleX = -MathHelper.cos(limbSwing * 0.09F) * 0.05F + limbSwingAmount;
-  }
+        this.rightarm.rotateAngleX = 0.0F;
+        this.leftarm.rotateAngleX = 0.0F;
+        this.rightleg.rotateAngleX = 0.0F;
+        this.leftleg.rotateAngleX = 0.0F;
+        this.rightarm.rotateAngleX += MathHelper.cos(limbSwing * 0.12F) * limbSwingAmount;
+        this.leftarm.rotateAngleX -= MathHelper.cos(limbSwing * 0.12F) * limbSwingAmount;
+        this.rightleg.rotateAngleX -= MathHelper.cos(limbSwing * 0.12F) * limbSwingAmount;
+        this.leftleg.rotateAngleX += MathHelper.cos(limbSwing * 0.12F) * limbSwingAmount;
+    }
 }

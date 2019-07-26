@@ -15,6 +15,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.server.management.PreYggdrasilConverter;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
@@ -38,7 +39,7 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
     }
 
     //todo
-   /* @Override
+    @Override
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
 
@@ -54,8 +55,21 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
         super.readEntityFromNBT(compound);
         String s;
 
-        if (compound.hasKey())
-    }*/
+        if (compound.hasKey("OwnerUUID",8)){
+            s = compound.getString("OwnerUUID");
+        }else {
+            String s1 = compound.getString("Owner");
+            s = PreYggdrasilConverter.convertMobOwnerIfNeeded(this.getServer(), s1);
+        }
+        if (!s.isEmpty()){
+            try {
+                this.setOwnerId(UUID.fromString(s));
+                this.setTamed(true);
+            }catch (Throwable ex){
+                this.setTamed(false);
+            }
+        }
+    }
 
     @Nullable
     @Override
@@ -69,13 +83,10 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
     @Nullable
     @Override
     public EntityLivingBase getOwner() {
-        try
-        {
+        try {
             UUID uuid = this.getOwnerId();
             return uuid == null ? null : this.world.getPlayerEntityByUUID(uuid);
-        }
-        catch (IllegalArgumentException var2)
-        {
+        } catch (IllegalArgumentException var2) {
             return null;
         }
     }
@@ -92,7 +103,7 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
                 itemStack.shrink(1);
             }
             if (!this.world.isRemote){
-                this.playTameEffect(false);
+                this.playTameEffect(true);
                 this.setTamedBy(player);
             }
 
@@ -120,8 +131,7 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
     {
         EnumParticleTypes enumparticletypes = EnumParticleTypes.HEART;
 
-        if (!play)
-        {
+        if (!play) {
             enumparticletypes = EnumParticleTypes.SMOKE_NORMAL;
         }
 

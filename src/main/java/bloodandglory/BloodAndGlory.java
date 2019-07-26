@@ -1,10 +1,7 @@
 package bloodandglory;
 
 import bloodandglory.common.CommonProxy;
-import bloodandglory.common.registies.BlockRegistry;
-import bloodandglory.common.registies.ItemRegistry;
-import bloodandglory.common.registies.RecipeRegistry;
-import bloodandglory.common.registies.Registry;
+import bloodandglory.common.registies.*;
 import jdk.nashorn.internal.ir.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.advancements.critereon.ItemPredicates;
@@ -33,6 +30,7 @@ public class BloodAndGlory {
         MinecraftForge.EVENT_BUS.register(ItemRegistry.class);
         MinecraftForge.EVENT_BUS.register(BlockRegistry.class);
         MinecraftForge.EVENT_BUS.register(RecipeRegistry.class);
+        MinecraftForge.EVENT_BUS.register(EntityRegistry.class);
     }
 
     public static ResourceLocation setPathIn(String pathIn){

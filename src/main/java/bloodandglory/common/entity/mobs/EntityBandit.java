@@ -1,28 +1,24 @@
 package bloodandglory.common.entity.mobs;
 
 import bloodandglory.common.entity.EntityBAGTameble;
-import com.google.common.base.Optional;
+import com.google.common.base.Predicate;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
-import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityTameable;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializer;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateGround;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import scala.util.control.Exception;
 
 import javax.annotation.Nullable;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class EntityBandit extends EntityBAGTameble {
 
@@ -35,6 +31,7 @@ public class EntityBandit extends EntityBAGTameble {
         ((PathNavigateGround)this.getNavigator()).setBreakDoors(true);
         //第一个参数是长宽，第二个是高度
         this.setSize(0.9F,1.95F);
+        this.setTamed(false);
     }
 
     @Override
@@ -55,7 +52,13 @@ public class EntityBandit extends EntityBAGTameble {
         this.tasks.addTask(3,this.wanderAI);
         this.tasks.addTask(3,this.watchAI);
         //攻击行为
-        this.targetTasks.addTask(3,new EntityAINearestAttackableTarget<EntityMob>(this, EntityMob.class,true));
+
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityLiving>(this, EntityLiving.class, 10, false, false, new Predicate<EntityLiving>() {
+            @Override
+            public boolean apply(@Nullable EntityLiving input) {
+                return input != null && IMob.VISIBLE_MOB_SELECTOR.apply(input) && !(input instanceof EntityEnderman)&&!(input instanceof EntityBandit);
+            }
+        }));
 
     }
 
@@ -68,7 +71,7 @@ public class EntityBandit extends EntityBAGTameble {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.56D);
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
     }
     //=======生成生物代码=================
