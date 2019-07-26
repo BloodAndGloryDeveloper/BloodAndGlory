@@ -2,13 +2,13 @@ package bloodandglory.common.item.tools;
 
 import bloodandglory.client.tab.BAGCreativeTabs;
 import bloodandglory.common.item.ItemBAGMaterial;
-import com.sun.istack.internal.NotNull;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemBAGPickaxe extends ItemPickaxe {
@@ -18,7 +18,7 @@ public class ItemBAGPickaxe extends ItemPickaxe {
     }
 
     @Override
-    public void addInformation(ItemStack stack, @NotNull World worldIn, List<String> tooltip, ITooltipFlag flagIn){
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn){
         ToolInformation.addToolInformation(tooltip, this);
         if (this.toolMaterial == ItemBAGMaterial.TOOL_MITHRIL){
             tooltip.add(I18n.format("tooltip.bloodandglory.mithril_tool"));
