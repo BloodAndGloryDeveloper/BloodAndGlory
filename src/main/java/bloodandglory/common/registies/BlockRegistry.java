@@ -2,7 +2,6 @@ package bloodandglory.common.registies;
 
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
-import bloodandglory.common.block.tile.BlockBAGFurnace;
 import bloodandglory.common.item.misc.ItemMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
@@ -32,7 +31,6 @@ public class BlockRegistry {
 
     public static final Block MITHRIL_BLOCK = new BlockBAG(Material.IRON);
     public static final Block MITHRIL_ORE = new BlockBAG(Material.ROCK);
-    public static final Block INDUSTRIAL_BOILER = new BlockBAGFurnace(false);
 
     public static void preInit(){
         try {

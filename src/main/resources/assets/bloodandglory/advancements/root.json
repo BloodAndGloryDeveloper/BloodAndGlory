@@ -1,25 +1,29 @@
 {
   "display": {
     "icon": {
-      "item":"bloodandglory:item_misc",
+      "item": "bloodandglory:item_misc",
       "data":4
     },
     "title": {
-      "translate":"advancement.bloodandglory.root.title"
+      "translate": "advancements.bloodandglory.root.title"
     },
     "description": {
-      "translate":"advancement.bloodandglory.root.desc"
+      "translate": "advancements.bloodandglory.root.desc"
     },
-    "background":"minecraft:textures/gui/advancements/backgrounds/nether.png"
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": false,
+    "announce_to_chat": false
   },
   "criteria": {
-    "do_something": {
-      "trigger": "minecraft:location",
+    "crafting_table": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "dimension":"overworld"
+        "items": [
+          {
+            "item": "minecraft:crafting_table"
+          }
+        ]
       }
     }
-  },
-  "requirements": [["do_something"
-  ]]
+  }
 }

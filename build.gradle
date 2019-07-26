@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 [compileJava,compileTestJava]*.options*.encoding = 'UTF-8'
 
-version = "0.0.1-dev"
-group= "bloodandglory" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = mod_version
+group= mod_group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bloodandglory"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.

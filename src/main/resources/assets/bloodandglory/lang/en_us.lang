@@ -33,6 +33,9 @@ tile.bloodandglory.mithril_ore.name=Mithril Ore
 tile.bloodandglory.mithril_block.name=Mithril Block
 tile.bloodandglory.indutrial_boiler.name=Induatrial Boiler
 
+#Entity
+entity.bloodandglory.bandit.name=Bandit
+
 #Creative Tabs
 itemGroup.bloodandglory.item=BloodAndGlory-Item
 itemGroup.bloodandglory.tool=Bloodandglory-Tool
@@ -54,14 +57,16 @@ container.industrial_boiler=Industrial Boiler
 
 #Advancements
 advancement.bloodandglory.root.title=Blood And Glory
-advancement.bloodandglory.root.desc=Nothing to show
+advancement.bloodandglory.root.desc=Welcome to this world!
 #adventurer
-advancement.bloodandglory.adventurer.root.title=Totally inhuman!
-advancement.bloodandglory.adventurer.root.desc=You kill every thing even a poor pig?
+advancement.bloodandglory.adventurer.root.title=Adventure
+advancement.bloodandglory.adventurer.root.desc=Adventure,fight!
+advancement.bloodandglory.adventurer.totally_inhuman.title=Totally inhuman!
+advancement.bloodandglory.adventurer.totally_inhuman.desc=You kill every thing even a poor pig?
 advancement.bloodandglory.adventurer.i_am_rich.title=I have been rich
 advancement.bloodandglory.adventurer.i_am_rich.desc=Got any Currency
 #miner
-advancement.bloodandglory.miner.root.title=Proletariat
-advancement.bloodandglory.miner.root.desc=Got ore of mithrils
+advancement.bloodandglory.miner.root.title=Miner
+advancement.bloodandglory.miner.root.desc=Your rich come here
 advancement.bloodandglory.miner.get_mithril.title=Migic age
 advancement.bloodandglory.miner.get_mithril.desc=Got a mithril
