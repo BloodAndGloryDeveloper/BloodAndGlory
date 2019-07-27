@@ -11,8 +11,11 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class ModelBandit extends ModelBase
+public class ModelBandit extends ModelBiped
 {
+    public ModelBandit(float f1,boolean b1){
+        super(f1,0.0F, 64,b1 ? 32 : 64);
+    }
     //fields
     ModelRenderer head;
     ModelRenderer body;

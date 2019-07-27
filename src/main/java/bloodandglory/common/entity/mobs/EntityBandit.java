@@ -28,7 +28,6 @@ public class EntityBandit extends EntityBAGTameble {
         ((PathNavigateGround)this.getNavigator()).setBreakDoors(true);
         //第一个参数是长宽，第二个是高度
         this.setSize(0.9F,1.95F);
-        this.setTamed(false);
     }
 
     @Override
@@ -56,7 +55,6 @@ public class EntityBandit extends EntityBAGTameble {
                 return input != null && IMob.VISIBLE_MOB_SELECTOR.apply(input) && !(input instanceof EntityEnderman)&&!(input instanceof EntityBandit);
             }
         }));
-
     }
 
     @Override

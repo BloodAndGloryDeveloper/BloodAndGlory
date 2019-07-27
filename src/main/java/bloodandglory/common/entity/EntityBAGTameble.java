@@ -1,14 +1,13 @@
 package bloodandglory.common.entity;
 
-import bloodandglory.common.entity.mobs.EntityBandit;
+
+import bloodandglory.common.item.misc.ItemMisc;
 import com.google.common.base.Optional;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityOwnable;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -19,16 +18,19 @@ import net.minecraft.server.management.PreYggdrasilConverter;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.event.ForgeEventFactory;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
-    private static final DataParameter<Byte> TAMED = EntityDataManager.<Byte>createKey(EntityBandit.class, DataSerializers.BYTE);
-    private static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.<Optional<UUID>>createKey(EntityTameable.class, DataSerializers.OPTIONAL_UNIQUE_ID);
+
+    private static final DataParameter<Byte> TAMED = EntityDataManager.<Byte>createKey(EntityBAGTameble.class, DataSerializers.BYTE);
+    private static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.<Optional<UUID>>createKey(EntityBAGTameble.class, DataSerializers.OPTIONAL_UNIQUE_ID);
 
     protected EntityBAGTameble(World worldIn){
         super(worldIn);
+        this.setTamed(false);
     }
 
     @Override
@@ -97,16 +99,27 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
         //获取玩家手上的物品
         ItemStack itemStack = player.getHeldItem(hand);
 
-        if (itemStack.getItem() == Items.EMERALD){
+        if (itemStack.getItem() == Items.EMERALD || itemStack.getItem() == ItemMisc.EnumItemMisc.NOLDOR_CURRENCY.getItem()
+                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.JIAOZI.getItem()
+                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.EMPIRE_CURRENCY.getItem()
+                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.HARD_CURRENCY.getItem()){
             //玩家手中数量物品-1
             if (!player.capabilities.isCreativeMode){
                 itemStack.shrink(1);
             }
-            if (!this.world.isRemote){
-                this.playTameEffect(true);
-                this.setTamedBy(player);
-            }
 
+            if (!this.world.isRemote){
+                if (this.rand.nextInt(2) == 0){
+                    this.setTamedBy(player);
+                    this.setAttackTarget((EntityLivingBase) null);
+                    this.playTameEffect(true);
+                    this.world.setEntityState(this,(byte)7);
+                }else {
+                    this.playTameEffect(false);
+                    this.world.setEntityState(this,(byte)6);
+                }
+            }
+            return true;
         }
         return false;
     }
