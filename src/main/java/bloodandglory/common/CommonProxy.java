@@ -17,7 +17,8 @@ public class CommonProxy{
     public void init(FMLInitializationEvent event){
         MinecraftForge.ORE_GEN_BUS.register(OreGenEventHandler.class);
     }
-    public void registerDefaultItemRenderer(Item item){}
+    public void registerDefaultItemRenderer(Item item){
+    }
 
     public Map<Integer, ResourceLocation> getItemModelMap(Item item){
         return Collections.emptyMap();
