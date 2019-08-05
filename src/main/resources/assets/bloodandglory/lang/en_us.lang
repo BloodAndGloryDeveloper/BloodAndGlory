@@ -27,7 +27,15 @@ item.bloodandglory.banana.name=Banana
 item.bloodandglory.raw_rice.name=Raw Rice
 item.bloodandglory.rice.name=Rice
 item.bloodandglory.cooked_egg.name=Cooked Egg
-
+#Armor
+item.bloodandglory.cotton_helmet.name=Cotton Helmet
+item.bloodandglory.cotton_chestplate.name=Cotton Chestplate
+item.bloodandglory.cotton_leggings.name=Cotton Leggings
+item.bloodandglory.cotton_boots.name=Cotton Boots
+item.bloodandglory.mithril_helmet.name=Mithril Helmet
+item.bloodandglory.mithril_chestplate.name=Mithril Chestplate
+item.bloodandglory.mithril_leggings.name=Mithril Leggings
+item.bloodandglory.mithril_boots.name=Mithril Boots
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore
 tile.bloodandglory.mithril_block.name=Mithril Block
