@@ -13,7 +13,6 @@ item.bloodandglory.cotton.name=Cotton
 #Currency
 item.bloodandglory.noldor_currency.name=Noldor Currency
 item.bloodandglory.empire_currency.name=Empire Currency
-item.bloodandglory.hard_currency.name=Hard Currency
 item.bloodandglory.jiaozi.name=Jiao Zi
 #Tool
 item.bloodandglory.mithril_sword.name=Mithril Sword
@@ -21,13 +20,32 @@ item.bloodandglory.mithril_shovel.name=Mithril Shovel
 item.bloodandglory.mithril_axe.name=Mithril Axe
 item.bloodandglory.mithril_pickaxe.name=Mithril Pickaxe
 item.bloodandglory.mithril_hoe.name=Mithril Hoe
+item.bloodandglory.spear.name=Spear
+item.bloodandglory.tang_dao.name=Tang's Sword
+item.bloodandglory.arrow_for_croobow.name=Arrow for Croobow
 #Food
 item.bloodandglory.alcohol.name=Alcohol
 item.bloodandglory.banana.name=Banana
 item.bloodandglory.raw_rice.name=Raw Rice
 item.bloodandglory.rice.name=Rice
 item.bloodandglory.cooked_egg.name=Cooked Egg
-
+#Armor
+item.bloodandglory.cotton_helmet.name=Cotton Helmet
+item.bloodandglory.cotton_chestplate.name=Cotton Chestplate
+item.bloodandglory.cotton_leggings.name=Cotton Leggings
+item.bloodandglory.cotton_boots.name=Cotton Boots
+item.bloodandglory.mithril_helmet.name=Mithril Helmet
+item.bloodandglory.mithril_chestplate.name=Mithril Chestplate
+item.bloodandglory.mithril_leggings.name=Mithril Leggings
+item.bloodandglory.mithril_boots.name=Mithril Boots
+item.bloodandglory.bronze_helmet.name=Bronze Helmet
+item.bloodandglory.bronze_chestplate.name=Bronze Chestplate
+item.bloodandglory.bronze_leggings.name=Bronze Leggings
+item.bloodandglory.bronze_boots.name=Bronze Boots
+item.bloodandglory.plate_mail_helmet.name=Plate Mail Helmet
+item.bloodandglory.plate_mail_chestplate.name=Plate Mail Chestplate
+item.bloodandglory.plate_mail_leggings.name=Plate Mail Leggings
+item.bloodandglory.plate_mail_boots.name=Plate Mail Boots
 #block
 tile.bloodandglory.mithril_ore.name=Mithril Ore
 tile.bloodandglory.mithril_block.name=Mithril Block
@@ -40,7 +58,7 @@ entity.bloodandglory.bandit.name=Bandit
 itemGroup.bloodandglory.item=BloodAndGlory-Item
 itemGroup.bloodandglory.tool=Bloodandglory-Tool
 itemGroup.bloodandglory.block=Bloodandglory-Block
-
+#PARSE_ESCAPES
 #ToolTip
 tooltip.bloodandglory.alcohol=Drink it,you will be strong as a bull!
 tooltip.bloodandglory.food=For God's sake,full up and sleep well.

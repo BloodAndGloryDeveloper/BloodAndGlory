@@ -48,7 +48,7 @@ public class EntityBandit extends EntityBAGTameble {
         this.tasks.addTask(3,this.wanderAI);
         this.tasks.addTask(3,this.watchAI);
         //攻击行为
-
+        this.targetTasks.addTask(2,new EntityAIHurtByTarget(this,true,new Class[0]));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntityLiving.class, 10, false, false, new Predicate<EntityLiving>() {
             @Override
             public boolean apply(@Nullable EntityLiving input) {
