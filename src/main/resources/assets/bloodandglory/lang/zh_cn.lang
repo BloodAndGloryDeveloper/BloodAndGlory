@@ -13,7 +13,6 @@ item.bloodandglory.cotton.name=棉花
 #Currency
 item.bloodandglory.noldor_currency.name=诺多货币
 item.bloodandglory.empire_currency.name=帝国货币
-item.bloodandglory.hard_currency.name=硬通货
 item.bloodandglory.jiaozi.name=交子
 #Tool
 item.bloodandglory.mithril_sword.name=秘银剑
@@ -21,6 +20,9 @@ item.bloodandglory.mithril_shovel.name=秘银铲
 item.bloodandglory.mithril_axe.name=秘银斧
 item.bloodandglory.mithril_pickaxe.name=秘银稿
 item.bloodandglory.mithril_hoe.name=秘银锄
+item.bloodandglory.spear.name=矛
+item.bloodandglory.tang_dao.name=唐刀
+item.bloodandglory.arrow_for_croobow.name=弩箭
 #Food
 item.bloodandglory.alcohol.name=酒
 item.bloodandglory.banana.name=香蕉
@@ -34,8 +36,16 @@ item.bloodandglory.cotton_leggings.name=棉裤
 item.bloodandglory.cotton_boots.name=棉靴
 item.bloodandglory.mithril_helmet.name=秘银盔
 item.bloodandglory.mithril_chestplate.name=秘银甲
-item.bloodandglory.mithril_leggings.name=秘银铠
+item.bloodandglory.mithril_leggings.name=秘银裤
 item.bloodandglory.mithril_boots.name=秘银靴
+item.bloodandglory.bronze_helmet.name=青铜盔
+item.bloodandglory.bronze_chestplate.name=青铜甲
+item.bloodandglory.bronze_leggings.name=青铜裤
+item.bloodandglory.bronze_boots.name=青铜靴
+item.bloodandglory.plate_mail_helmet.name=骑士板甲（盔）
+item.bloodandglory.plate_mail_chestplate.name=骑士板甲
+item.bloodandglory.plate_mail_leggings.name=骑士板甲（裤）
+item.bloodandglory.plate_mail_boots.name=骑士板甲（靴）
 
 #block
 tile.bloodandglory.mithril_ore.name=秘银矿
@@ -49,7 +59,7 @@ entity.bloodandglory.bandit.name=山贼
 itemGroup.bloodandglory.item=血与荣耀—物品
 itemGroup.bloodandglory.tool=血与荣耀—工具
 itemGroup.bloodandglory.block=血与荣耀—物品
-
+#PARSE_ESCAPES
 #ToolTips
 tooltip.bloodandglory.alcohol=喝了它，你会勇猛如牛！
 tooltip.bloodandglory.food=看在上帝的份上，吃饱睡好吧。

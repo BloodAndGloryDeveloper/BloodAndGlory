@@ -53,7 +53,6 @@ public class ItemMisc extends Item implements ItemRegistry.IMultipleItemModelDef
     public enum EnumItemMisc implements IGenericItem{
         NOLDOR_CURRENCY(0),
         EMPIRE_CURRENCY(1),
-        HARD_CURRENCY(2),
         JIAOZI(3),
         MITHRIL(4),
         BRONZE(5),

@@ -101,8 +101,7 @@ public class EntityBAGTameble extends EntityMob implements IEntityOwnable {
 
         if (itemStack.getItem() == Items.EMERALD || itemStack.getItem() == ItemMisc.EnumItemMisc.NOLDOR_CURRENCY.getItem()
                                                  || itemStack.getItem() == ItemMisc.EnumItemMisc.JIAOZI.getItem()
-                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.EMPIRE_CURRENCY.getItem()
-                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.HARD_CURRENCY.getItem()){
+                                                 || itemStack.getItem() == ItemMisc.EnumItemMisc.EMPIRE_CURRENCY.getItem()){
             //玩家手中数量物品-1
             if (!player.capabilities.isCreativeMode){
                 itemStack.shrink(1);

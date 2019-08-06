@@ -3,8 +3,8 @@ package bloodandglory.common.registies;
 import bloodandglory.BloodAndGlory;
 import bloodandglory.ModInfo;
 import bloodandglory.common.item.ItemBAGMaterial;
-import bloodandglory.common.item.armor.ItemBAGArmor;
-import bloodandglory.common.item.armor.ItemCottonArmor;
+import bloodandglory.common.item.armor.*;
+import bloodandglory.common.item.misc.ItemBAGArrow;
 import bloodandglory.common.item.misc.ItemMisc;
 import bloodandglory.common.item.misc.ItemAlcohol;
 import bloodandglory.common.item.food.ItemBAGFood;
@@ -48,8 +48,9 @@ public class ItemRegistry {
     public static final Item MITHRIL_SHOVEL = new ItemBAGShovel(ItemBAGMaterial.TOOL_MITHRIL);
     public static final Item MITHRIL_PICKAXE = new ItemBAGPickaxe(ItemBAGMaterial.TOOL_MITHRIL);
     public static final Item MITHRIL_HOE = new ItemBAGHoe(ItemBAGMaterial.TOOL_MITHRIL);
-
+    public static final Item TANG_DAO = new ItemBAGSword(ItemBAGMaterial.TOOL_STEELMAKING);//别笑，百度的英文就是这样
     public static final Item SPEAR = new ItemSpear();
+    public static final Item ARROW_FOR_CROSSBOW = new ItemBAGArrow();
     //Food
     public static final Item ALCOHOL = new ItemAlcohol();
     public static final Item COOKED_EGG = new ItemBAGFood(4,2.0F,true);
@@ -62,12 +63,18 @@ public class ItemRegistry {
     public static final Item COTTON_CHESTPLATE = new ItemCottonArmor(EntityEquipmentSlot.CHEST);
     public static final Item COTTON_LEGGINGS = new ItemCottonArmor(EntityEquipmentSlot.LEGS);
     public static final Item COTTON_BOOTS = new ItemCottonArmor(EntityEquipmentSlot.FEET);
-    //todo:待添加这个盔甲的类
-    /*public static final Item MITHRIL_HELMET = new ItemBAGArmor(ItemBAGMaterial.ARMOR_MITHRIL,0, EntityEquipmentSlot.HEAD);
-    public static final Item MITHRIL_CHESTPLATE = new ItemBAGArmor(ItemBAGMaterial.ARMOR_MITHRIL,0,EntityEquipmentSlot.CHEST);
-    public static final Item MITHRIL_LEGGINGS = new ItemBAGArmor(ItemBAGMaterial.ARMOR_MITHRIL,0,EntityEquipmentSlot.LEGS);
-    public static final Item MITHRIL_BOOTS = new ItemBAGArmor(ItemBAGMaterial.ARMOR_MITHRIL,0,EntityEquipmentSlot.FEET);*/
-
+    public static final Item MITHRIL_HELMET = new ItemMithrilArmor(EntityEquipmentSlot.HEAD);
+    public static final Item MITHRIL_CHESTPLATE = new ItemMithrilArmor(EntityEquipmentSlot.CHEST);
+    public static final Item MITHRIL_LEGGINGS = new ItemMithrilArmor(EntityEquipmentSlot.LEGS);
+    public static final Item MITHRIL_BOOTS = new ItemMithrilArmor(EntityEquipmentSlot.FEET);
+    public static final Item BRONZE_HELMET = new ItemBronzeArmor(EntityEquipmentSlot.HEAD);
+    public static final Item BRONZE_CHESTPLATE = new ItemBronzeArmor(EntityEquipmentSlot.HEAD);
+    public static final Item BRONZE_LEGGINGS = new ItemBronzeArmor(EntityEquipmentSlot.LEGS);
+    public static final Item BRONZE_BOOTS = new ItemBronzeArmor(EntityEquipmentSlot.FEET);
+    public static final Item PLATE_MAIL_HELMET = new ItemPlateMailArmor(EntityEquipmentSlot.HEAD);
+    public static final Item PLATE_MAIL_CHESTPLATE = new ItemPlateMailArmor(EntityEquipmentSlot.CHEST);
+    public static final Item PLATE_MAIL_LEGGINGS = new ItemPlateMailArmor(EntityEquipmentSlot.LEGS);
+    public static final Item PLATE_MAIL_BOOTS = new ItemPlateMailArmor(EntityEquipmentSlot.FEET);
     public static void preInit(){
         try {
             for (Field field:ItemRegistry.class.getDeclaredFields()){
@@ -90,6 +97,8 @@ public class ItemRegistry {
     private static void oreRegistry(){
         OreDictionary.registerOre("mithril", ItemMisc.EnumItemMisc.MITHRIL.create(1));
         OreDictionary.registerOre("bronze", ItemMisc.EnumItemMisc.BRONZE.create(1));
+
+        OreDictionary.registerOre("arrow",ARROW_FOR_CROSSBOW);
     }
 
     @SubscribeEvent
