@@ -75,19 +75,18 @@ public class ItemRegistry {
     public static final Item PLATE_MAIL_CHESTPLATE = new ItemPlateMailArmor(EntityEquipmentSlot.CHEST);
     public static final Item PLATE_MAIL_LEGGINGS = new ItemPlateMailArmor(EntityEquipmentSlot.LEGS);
     public static final Item PLATE_MAIL_BOOTS = new ItemPlateMailArmor(EntityEquipmentSlot.FEET);
-    public static void preInit(){
+    public static void preInit() {
         try {
-            for (Field field:ItemRegistry.class.getDeclaredFields()){
-                if (field.get(null) instanceof Item){
+            for (Field field : ItemRegistry.class.getDeclaredFields()) {
+                if (field.get(null) instanceof Item) {
                     Item item = (Item) field.get(null);
-                    registryItems(item,field.getName());
+                    registryItems(item, field.getName());
                 }
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
     private static void registryItems(Item item,String fieldName){
         ITEMS.add(item);
         String idName = fieldName.toLowerCase(Locale.ENGLISH);
