@@ -84,12 +84,10 @@ public class ModelBandit extends ModelBiped
     @Override
     public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
         super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
-        float f = 0.05F;
-        this.bipedRightArm.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount - f;
-        this.bipedLeftArm.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount - f;
-        this.bipedRightLeg.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount - f;
-        this.bipedLeftLeg.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount - f;
-
+        this.bipedRightArm.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
+        this.bipedLeftArm.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
+        this.bipedRightLeg.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
+        this.bipedLeftLeg.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
     }
 
 

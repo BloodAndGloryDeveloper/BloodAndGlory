@@ -2,7 +2,8 @@ package bloodandglory.common.registies;
 
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
-import bloodandglory.common.item.misc.ItemMisc;
+import bloodandglory.common.block.plant.BlockBAGCrops;
+import bloodandglory.common.item.misc.ItemMisc.EnumItemMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
@@ -31,6 +32,9 @@ public class BlockRegistry {
 
     public static final Block MITHRIL_BLOCK = new BlockBAG(Material.IRON);
     public static final Block MITHRIL_ORE = new BlockBAG(Material.ROCK);
+
+    public static final Block PLANT_COTTON = new BlockBAGCrops(EnumItemMisc.COTTON.getItem(), EnumItemMisc.COTTON.getItem());
+    public static final Block PLANT_MILLET = new BlockBAGCrops(EnumItemMisc.MILLET.getItem(), EnumItemMisc.MILLET.getItem());
 
     public static void preInit(){
         try {
@@ -84,7 +88,7 @@ public class BlockRegistry {
             //从草丛掉落小米
             //判断是否是草丛
             if (event.getState().getBlock() == Blocks.TALLGRASS){
-                event.getDrops().add(ItemMisc.EnumItemMisc.MILLET.create(1));
+                event.getDrops().add(EnumItemMisc.MILLET.create(1));
             }
         }
     }

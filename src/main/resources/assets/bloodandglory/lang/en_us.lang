@@ -22,7 +22,7 @@ item.bloodandglory.mithril_pickaxe.name=Mithril Pickaxe
 item.bloodandglory.mithril_hoe.name=Mithril Hoe
 item.bloodandglory.spear.name=Spear
 item.bloodandglory.tang_dao.name=Tang's Sword
-item.bloodandglory.arrow_for_croobow.name=Arrow for Croobow
+item.bloodandglory.arrow_for_crossbow.name=Arrow for Croobow
 #Food
 item.bloodandglory.alcohol.name=Alcohol
 item.bloodandglory.banana.name=Banana
@@ -60,15 +60,25 @@ itemGroup.bloodandglory.tool=Bloodandglory-Tool
 itemGroup.bloodandglory.block=Bloodandglory-Block
 #PARSE_ESCAPES
 #ToolTip
-tooltip.bloodandglory.alcohol=Drink it,you will be strong as a bull!
-tooltip.bloodandglory.food=For God's sake,full up and sleep well.
-tooltip.bloodandglory.mithril_tool=Look,my hand is holding the magic!
+#有哪位精通翻译的人才帮帮翻译一下，初中英语很为难（哭）
+tooltip.bloodandglory.alcohol=喝了它，你会勇猛如牛！
+tooltip.bloodandglory.food=看在上帝的份上，吃饱睡好吧。
+tooltip.bloodandglory.mithril_tool=看，我手上掌握着魔法！
 
-tooltip.bloodandglory.sword=At the sight of injustcie,waving to the enemy.
-tooltip.bloodandglory.axe=More shorp,more save time.
-tooltip.bloodandglory.shovel=Use shovel.
-tooltip.bloodandglory.hoe=Use hoe.
-tooltip.bloodandglory.pickaxe=Use pickaxe.
+tooltip.bloodandglory.sword=路见不平，挥舞向敌
+tooltip.bloodandglory.axe=越锋利，越省时
+tooltip.bloodandglory.shovel=铲除邪恶
+tooltip.bloodandglory.hoe=勤劳才有收获
+tooltip.bloodandglory.pickaxe=开山凿石
+
+#Tool
+
+text.bloodandglory.block.coal_ore=火焰的种子埋在石块，\n工业革命从此到来
+text.bloodandglory.block.redstone_ore=轻轻敲击红石矿，\n它发出了技术的曙光
+text.bloodandglory.block.iron_ore=千锤百炼火中炼，\n刀砍斧劈永远坚
+text.bloodandglory.block.glod.ore=财富孕育于此，\n多少人为此而痴
+text.bloodandglory.block.emerald_ore=宝石闪着绿莹莹的光，\n吸引人为它而狂
+text.bloodandglory.block.diamond_ore=透明，晶莹，还坚硬！
 
 #Comtainer
 container.industrial_boiler=Industrial Boiler
@@ -81,10 +91,10 @@ advancement.bloodandglory.adventurer.root.title=Adventure
 advancement.bloodandglory.adventurer.root.desc=Adventure,fight!
 advancement.bloodandglory.adventurer.totally_inhuman.title=Totally inhuman!
 advancement.bloodandglory.adventurer.totally_inhuman.desc=You kill every thing even a poor pig?
-advancement.bloodandglory.adventurer.i_am_rich.title=I have been rich
+advancement.bloodandglory.adventurer.i_am_rich.title=I am rich
 advancement.bloodandglory.adventurer.i_am_rich.desc=Got any Currency
 #miner
 advancement.bloodandglory.miner.root.title=Miner
-advancement.bloodandglory.miner.root.desc=Your rich come here
+advancement.bloodandglory.miner.root.desc=Your rich come here,keep working hard!
 advancement.bloodandglory.miner.get_mithril.title=Migic age
-advancement.bloodandglory.miner.get_mithril.desc=Got a mithril
+advancement.bloodandglory.miner.get_mithril.desc=Got a mithril ingot
