@@ -1,6 +1,6 @@
 {
     "parent":"item/generated",
     "textures": {
-        "layer0":"bloodandglory:items/test_item"
+        "layer0":"bloodandglory:items/empire_currency"
     }
 }
