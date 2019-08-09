@@ -22,7 +22,7 @@ item.bloodandglory.mithril_pickaxe.name=秘银稿
 item.bloodandglory.mithril_hoe.name=秘银锄
 item.bloodandglory.spear.name=矛
 item.bloodandglory.tang_dao.name=唐刀
-item.bloodandglory.arrow_for_croobow.name=弩箭
+item.bloodandglory.arrow_for_crossbow.name=弩箭
 #Food
 item.bloodandglory.alcohol.name=酒
 item.bloodandglory.banana.name=香蕉
@@ -71,6 +71,14 @@ tooltip.bloodandglory.shovel=铲除邪恶
 tooltip.bloodandglory.hoe=勤劳才有收获
 tooltip.bloodandglory.pickaxe=开山凿石
 
+#Text
+text.bloodandglory.block.coal_ore=火焰的种子埋在石块，\n工业革命从此到来
+text.bloodandglory.block.redstone_ore=轻轻敲击红石矿，\n它发出了技术的曙光
+text.bloodandglory.block.iron_ore=千锤百炼火中炼，\n刀砍斧劈永远坚
+text.bloodandglory.block.glod.ore=财富孕育于此，\n多少人为此而痴
+text.bloodandglory.block.emerald_ore=宝石闪着绿莹莹的光，\n吸引人为它而狂
+text.bloodandglory.block.diamond_ore=透明，晶莹，还坚硬！
+
 #Container
 container.industrial_boiler=工业化锅炉
 
@@ -82,10 +90,10 @@ advancement.bloodandglory.adventurer.root.title=血与荣耀-冒险
 advancement.bloodandglory.adventurer.root.desc=冒险，战斗！
 advancement.bloodandglory.adventurer.totally_inhuman.title=毫无人性
 advancement.bloodandglory.adventurer.totally_inhuman.desc=你连一头可怜的猪都要杀？
-advancement.bloodandglory.adventurer.i_am_rich.title=爷有钱了
+advancement.bloodandglory.adventurer.i_am_rich.title=爷有钱
 advancement.bloodandglory.adventurer.i_am_rich.desc=获得任意货币
 #miner
 advancement.bloodandglory.miner.root.title=血与荣耀-矿工
-advancement.bloodandglory.miner.root.desc=你的财富源于此
+advancement.bloodandglory.miner.root.desc=你的财富源于此，请继续努力！
 advancement.bloodandglory.miner.get_mithril.title=魔法时代
 advancement.bloodandglory.miner.get_mithril.desc=获得一颗秘银
