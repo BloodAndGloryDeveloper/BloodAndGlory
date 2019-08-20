@@ -2,6 +2,7 @@ package bloodandglory.common.registies;
 
 import bloodandglory.BloodAndGlory;
 import bloodandglory.ModInfo;
+import bloodandglory.client.tab.BAGCreativeTabs;
 import bloodandglory.common.item.ItemBAGMaterial;
 import bloodandglory.common.item.armor.*;
 import bloodandglory.common.item.misc.ItemBAGArrow;
@@ -12,10 +13,13 @@ import bloodandglory.common.item.food.ItemRise;
 import bloodandglory.common.item.tools.*;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
@@ -39,8 +43,10 @@ import java.util.Set;
 public class ItemRegistry {
     //存放物品的哈希表
     public static final Set<Item> ITEMS = new LinkedHashSet<>();
-
+    //misc
     public static final Item ITEM_MISC = new ItemMisc();
+    public static final Item MILLET = new ItemSeeds(BlockRegistry.PLANT_MILLET, Blocks.FARMLAND).setCreativeTab(BAGCreativeTabs.ITEM_TAB);
+    public static final Item COTTON = new ItemSeeds(BlockRegistry.PLANT_COTTON,Blocks.FARMLAND).setCreativeTab(BAGCreativeTabs.ITEM_TAB);
 
     //Tool
     public static final Item MITHRIL_AXE = new ItemBAGAxe(ItemBAGMaterial.TOOL_MITHRIL);

@@ -62,9 +62,8 @@ public class ItemMisc extends Item implements ItemRegistry.IMultipleItemModelDef
         BRIGHT_FEATHER(9),
         SWAN_QUILL(10),
         HEART_OF_STORM(11),
-        STONE_OF_FALCON(12),
-        MILLET(13),
-        COTTON(14);
+        STONE_OF_FALCON(12);
+
 
         private final int id;
         private final String translationKey;

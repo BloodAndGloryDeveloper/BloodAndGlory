@@ -33,8 +33,8 @@ public class BlockRegistry {
     public static final Block MITHRIL_BLOCK = new BlockBAG(Material.IRON);
     public static final Block MITHRIL_ORE = new BlockBAG(Material.ROCK);
 
-    public static final Block PLANT_COTTON = new BlockBAGCrops(EnumItemMisc.COTTON.getItem(), EnumItemMisc.COTTON.getItem());
-    public static final Block PLANT_MILLET = new BlockBAGCrops(EnumItemMisc.MILLET.getItem(), EnumItemMisc.MILLET.getItem());
+    public static final Block PLANT_COTTON = new BlockBAGCrops(ItemRegistry.COTTON, ItemRegistry.COTTON);
+    public static final Block PLANT_MILLET = new BlockBAGCrops(ItemRegistry.MILLET, ItemRegistry.MILLET);
 
     public static void preInit(){
         try {
@@ -88,7 +88,7 @@ public class BlockRegistry {
             //从草丛掉落小米
             //判断是否是草丛
             if (event.getState().getBlock() == Blocks.TALLGRASS){
-                event.getDrops().add(EnumItemMisc.MILLET.create(1));
+                event.getDrops().add(new ItemStack(ItemRegistry.MILLET));
             }
         }
     }
