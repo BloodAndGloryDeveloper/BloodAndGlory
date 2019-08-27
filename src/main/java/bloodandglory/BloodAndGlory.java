@@ -2,6 +2,7 @@ package bloodandglory;
 
 import bloodandglory.common.CommonProxy;
 import bloodandglory.common.registies.*;
+import bloodandglory.common.world.gen.OreGenEventHandler;
 import jdk.nashorn.internal.ir.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.advancements.critereon.ItemPredicates;
@@ -42,5 +43,6 @@ public class BloodAndGlory {
         proxy.init(event);
 
         Registry.instance.init();
+        MinecraftForge.ORE_GEN_BUS.register(OreGenEventHandler.class);
     }
 }

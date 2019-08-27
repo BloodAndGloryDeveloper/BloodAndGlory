@@ -3,6 +3,7 @@ package bloodandglory.common.registies;
 import bloodandglory.ModInfo;
 import bloodandglory.common.block.BlockBAG;
 import bloodandglory.common.block.plant.BlockBAGCrops;
+import bloodandglory.common.block.plant.BlockBAGMillet;
 import bloodandglory.common.item.misc.ItemMisc.EnumItemMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
@@ -34,7 +35,7 @@ public class BlockRegistry {
     public static final Block MITHRIL_ORE = new BlockBAG(Material.ROCK);
 
     public static final Block PLANT_COTTON = new BlockBAGCrops(ItemRegistry.COTTON, ItemRegistry.COTTON);
-    public static final Block PLANT_MILLET = new BlockBAGCrops(ItemRegistry.MILLET, ItemRegistry.MILLET);
+    public static final Block PLANT_MILLET = new BlockBAGMillet();
 
     public static void preInit(){
         try {

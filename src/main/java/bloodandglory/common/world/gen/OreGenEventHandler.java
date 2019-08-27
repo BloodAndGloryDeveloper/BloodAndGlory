@@ -12,7 +12,7 @@ public class OreGenEventHandler {
     private static WorldGenerator oreMithrilGen = new WorldGenMinable(BlockRegistry.MITHRIL_ORE.getDefaultState(),16);
 
     @SubscribeEvent
-    public static void onOreGen(OreGenEvent.Post event){
+    public static void onOreGen(OreGenEvent.GenerateMinable event){
         //在这里注册要生成的矿物
         genOre(event,oreMithrilGen,16,16);
     }
@@ -21,7 +21,7 @@ public class OreGenEventHandler {
      * @param oreGenHigh 设置矿物生成高度，这里是从oreGenStart开始算的
      * @param oreGenStart 设置矿物生成最低高度
      */
-    public static void genOre(OreGenEvent.Post event,WorldGenerator worldGenerator,int oreGenHigh,int oreGenStart){
+    public static void genOre(OreGenEvent.GenerateMinable event,WorldGenerator worldGenerator,int oreGenHigh,int oreGenStart){
         //检查矿物生成
         if (TerrainGen.generateOre(event.getWorld(),event.getRand(),worldGenerator,event.getPos(),OreGenEvent.GenerateMinable.EventType.CUSTOM)){
             for (int i = 0;i < 4;i++){

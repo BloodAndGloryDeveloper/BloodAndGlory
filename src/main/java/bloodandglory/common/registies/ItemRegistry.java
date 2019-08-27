@@ -12,22 +12,16 @@ import bloodandglory.common.item.food.ItemBAGFood;
 import bloodandglory.common.item.food.ItemRise;
 import bloodandglory.common.item.tools.*;
 import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -101,8 +95,10 @@ public class ItemRegistry {
     }
 
     private static void oreRegistry(){
-        OreDictionary.registerOre("mithril", ItemMisc.EnumItemMisc.MITHRIL.create(1));
-        OreDictionary.registerOre("bronze", ItemMisc.EnumItemMisc.BRONZE.create(1));
+        OreDictionary.registerOre("IngotMithril", ItemMisc.EnumItemMisc.MITHRIL.create(1));
+        OreDictionary.registerOre("IngotBronze", ItemMisc.EnumItemMisc.BRONZE.create(1));
+
+        OreDictionary.registerOre("OreMithril", BlockRegistry.MITHRIL_ORE);
 
         OreDictionary.registerOre("arrow",ARROW_FOR_CROSSBOW);
     }
