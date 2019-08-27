@@ -1,24 +1,31 @@
 package bloodandglory.common.block.plant;
 
-import bloodandglory.common.block.BlockBAG;
 import bloodandglory.common.registies.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
+import net.minecraft.block.BlockCrops;
 
 import java.util.Random;
 
 public class BlockBAGMillet extends BlockReed implements IPlantable {
+    protected static final AxisAlignedBB MILLET_AABB = new AxisAlignedBB(0.125D, 0.0D, 0.125D, 0.875D, 1.0D, 0.875D);
     public BlockBAGMillet(){
 
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return MILLET_AABB;
     }
 
     /**
