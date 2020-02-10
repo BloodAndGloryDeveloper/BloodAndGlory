@@ -1,19 +1,19 @@
-
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://crystal.lss233.com.aslf.top/repositories/minecraft" }
+        maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-[compileJava,compileTestJava]*.options*.encoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 version = mod_version
-group= mod_group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "bloodandglory" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bloodandglory"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
@@ -22,17 +22,19 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2836"
+    version = "1.12.2-14.23.5.2768"
     runDir = "run"
-
+    
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "stable_39"
+    mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    replace "@version@",project.version
+    
+    
+    replace "@version@", project.version
 }
 
 dependencies {
@@ -40,7 +42,7 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-
+      
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -67,13 +69,23 @@ processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-
+                
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-
+        
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
+// try to solve some questions
+idea{module{inheritOutputDirs = true}}
+// you can set username with gradle argument -PappArgs="['--username=player']" to set you name
+// like this: gradlew runClient -PappArgs="['--username=player']"
+runClient {
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
+}
+
