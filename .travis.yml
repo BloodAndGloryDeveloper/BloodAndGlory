@@ -3,4 +3,5 @@ jdk:
   - openjdk8
 before_install:
   - chmod -x gradlew
-script: ./gradlew build --continue --stacktrace
+
+./gradlew build
