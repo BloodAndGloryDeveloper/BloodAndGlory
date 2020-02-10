@@ -1,14 +1,8 @@
 #基本设置
 language: java
 jdk:
-  - oraclejdk8
-
-branches:
-  - master
-  - develop
-  - feature
+  - openjdk8
 
 before_script:
   - chmod +X gradlew
-  - chmod +X gradlew.bat
 script: "./gradlew build --continue --stacktrace"
