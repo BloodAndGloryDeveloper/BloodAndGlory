@@ -9,7 +9,7 @@ public class ToolsTab extends CreativeTabs {
         super("bloodandglory.tool");
     }
     @Override
-    public ItemStack createIcon(){
+    public ItemStack getTabIconItem(){
         return new ItemStack(ItemRegistry.MITHRIL_SWORD);
     }
 }

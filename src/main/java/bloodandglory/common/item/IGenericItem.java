@@ -12,7 +12,7 @@ public interface IGenericItem {
     /**
      * @return Item's translation key
      * */
-    String getTranslationKey();
+    String getUnlocalizedName();
 
     String getModelName();
     /**

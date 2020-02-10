@@ -91,7 +91,7 @@ public class ItemRegistry {
     private static void registryItems(Item item,String fieldName){
         ITEMS.add(item);
         String idName = fieldName.toLowerCase(Locale.ENGLISH);
-        item.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
+        item.setRegistryName(idName).setUnlocalizedName(ModInfo.MOD_ID + "." + idName);
     }
 
     private static void oreRegistry(){

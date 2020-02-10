@@ -10,7 +10,7 @@ public class ItemsTab extends CreativeTabs {
     }
 
     @Override
-    public ItemStack createIcon(){
+    public ItemStack getTabIconItem(){
         return ItemMisc.EnumItemMisc.MITHRIL.create(1);
     }
 }

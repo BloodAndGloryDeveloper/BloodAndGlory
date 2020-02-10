@@ -10,7 +10,7 @@ public class BlocksTab extends CreativeTabs {
     }
 
     @Override
-    public ItemStack createIcon(){
+    public ItemStack getTabIconItem(){
         return new ItemStack(BlockRegistry.MITHRIL_ORE);
     }
 }

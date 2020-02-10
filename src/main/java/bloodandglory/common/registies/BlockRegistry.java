@@ -49,7 +49,7 @@ public class BlockRegistry {
     private static void registryBlock(Block block,String fieldName){
         BLOCKS.add(block);
         String idName = fieldName.toLowerCase(Locale.ENGLISH);
-        block.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
+        block.setRegistryName(idName).setUnlocalizedName(ModInfo.MOD_ID + "." + idName);
 
         ItemBlock item = null;
         if (block instanceof ICustomItemBlock){
@@ -59,7 +59,7 @@ public class BlockRegistry {
         }
         if (item != null){
             ITEM_BLOCKS.add(item);
-            item.setRegistryName(idName).setTranslationKey(ModInfo.MOD_ID + "." + idName);
+            item.setRegistryName(idName).setUnlocalizedName(ModInfo.MOD_ID + "." + idName);
         }
     }
 

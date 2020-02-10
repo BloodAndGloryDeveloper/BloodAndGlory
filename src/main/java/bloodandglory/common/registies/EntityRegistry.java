@@ -30,7 +30,7 @@ public class EntityRegistry {
         }
 
         private static String toString(ResourceLocation location){
-            return location.getNamespace() + "." + location.getPath();
+            return location.getResourceDomain() + "." + location.getResourcePath();
         }
 
         final <T extends Entity> EntityEntryBuilder<T> builder(ResourceLocation registryName, Class<T> entity, Function<World, T> factory) {

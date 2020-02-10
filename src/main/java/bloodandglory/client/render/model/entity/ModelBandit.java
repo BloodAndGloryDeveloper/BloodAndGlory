@@ -22,7 +22,6 @@ public class ModelBandit extends ModelBiped
     public ModelBandit(float f1,boolean b1){
         super(f1,0.0F, 64,b1 ? 32 : 64);
     }
-<<<<<<< HEAD
     //fields
     /*ModelRenderer bipedHead;
     ModelRenderer bipedBody;
@@ -30,9 +29,6 @@ public class ModelBandit extends ModelBiped
     ModelRenderer bipedLeftArm;
     ModelRenderer bipedRightLeg;
     ModelRenderer bipedLeftLeg;*/
-
-=======
->>>>>>> develop
 
     public ModelBandit()
     {
@@ -95,17 +91,11 @@ public class ModelBandit extends ModelBiped
     @Override
     public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
         super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
-<<<<<<< HEAD
-        this.bipedRightArm.rotateAngleX += MathHelper.cos(limbSwing * 0.09F) * limbSwingAmount;
-        this.bipedLeftArm.rotateAngleX -= MathHelper.cos(limbSwing * 0.09F) * limbSwingAmount;
-        this.bipedRightLeg.rotateAngleX -= MathHelper.cos(limbSwing * 0.09F) * limbSwingAmount;
-        this.bipedLeftLeg.rotateAngleX += MathHelper.cos(limbSwing * 0.09F) * limbSwingAmount;
-=======
+
         this.bipedRightArm.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
         this.bipedLeftArm.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
         this.bipedRightLeg.rotateAngleX -= MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
         this.bipedLeftLeg.rotateAngleX += MathHelper.cos(limbSwing * 0.02F) * limbSwingAmount;
->>>>>>> develop
     }
 
 
