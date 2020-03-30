@@ -1,6 +1,6 @@
-# Blood And Glory(BAG) for Minecraft 1.12.2
-
-Blood And Glory是一个Minecraft1.12.2的Mod，里面实现了类似于中土世界和《骑马与砍杀》风格的世界，
+[![Build Status](https://travis-ci.org/yaesey/BloodAndGlory.svg?branch=master)](https://travis-ci.org/yaesey/BloodAndGlory) 
+# Blood And Glory(BAG) for Minecraft 1.12.2  
+Blood And Glory  是一个Minecraft1.12.2的Mod，里面实现了类似于中土世界和《骑马与砍杀》风格的世界，
 顺便实现1.13和1.14的部分内容（Mod的剧情和物品很大程度参考了托尔金先生的作品和其他优秀中世纪风格作品，
 还有一些来自其他游戏的设定）。
   
